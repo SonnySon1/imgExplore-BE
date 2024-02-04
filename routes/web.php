@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\UploadController;
@@ -40,6 +41,6 @@ Route::middleware('auth')->group(function(){
     });
 
     Route::get('/upload', [UploadController::class, 'index']);
-
     Route::get('/signout', [SigninController::class, 'signout']);
+    Route::get('/profile', [ProfileController::class, 'index']);
 });
