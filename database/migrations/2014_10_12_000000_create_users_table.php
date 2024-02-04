@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('picture')->nullable();
             $table->enum('is_google_user', [0, 1])->default(0);
             $table->enum('status_active', [0, 1])->default(1);
+            $table->enum('role', ['user', 'admin'])->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

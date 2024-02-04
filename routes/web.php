@@ -15,16 +15,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/signup', [SignupController::class, 'index']);
-Route::post('/signup', [SignupController::class, 'store']);
-
-Route::get('/signin', [SigninController::class, 'index']);
-
-
-
-Route::get('/', function () {
-    return view('pages.home');
+Route::middleware('guest')->group(function(){
+    Route::get('/signup', [SignupController::class, 'index']);
+    Route::post('/signup', [SignupController::class, 'store']);
+    
+    Route::get('/signin', [SigninController::class, 'index'])->name('login');
+    Route::post('/signin', [SigninController::class, 'store']);
+    
+    Route::get('/', function () {
+        return view('pages.home');
+    });
 });
+
+
 Route::get('/explore', function(){
     return view('pages.explore');
+});
+
+Route::middleware('auth')->group(function(){
+
+    Route::get('/dashboard', function(){
+        return view('pages.dashboard');
+    });
+
+    Route::get('/signout', [SigninController::class, 'signout']);
 });

@@ -25,14 +25,25 @@
                                         <p>Search for various works</p>
                                     </div>
                                     <div class="form-signin">
-                                        <form action="">
+                                        <form action="/signin" method="POST">
+                                            @csrf
                                             <div class="input-distance-signin">
                                                 <label for="">Username</label>
-                                                <input type="text">
+                                                <input type="text" name="username" value="{{ old('username') }}">
+                                                @error('username')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
                                             </div>
                                             <div class="input-distance-signin">
                                                 <label for="">Password</label>
-                                                <input type="text">
+                                                <input type="password" name="password"> 
+                                                @error('password')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                                <br>
+                                                @if (session('error'))
+                                                    <small>{{ session('error') }}</small>
+                                                @endif
                                             </div>
                                             <div class="input-distance-signin">
                                                 <button type="submit">Continue</button>

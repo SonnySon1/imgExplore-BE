@@ -1,0 +1,28 @@
+<head>
+    <div class="container">
+    <ul class="header">
+        <li class="title">.imgExplore</li>
+        <nav class="navbar">
+             <li>
+                 <ul>
+                     <li><a href="/explore" class="{{ Request('/explore') ? 'active' : ' ' }}">Explore</a></li>
+                     <li><a href="/categories" class="{{ Request('/categories') ? 'active' : ' ' }}">Category</a></li>
+                     <li><a href="/upload" class="{{ Request('/upload') ? 'active' : ' ' }}">Create </a></li>
+                 </ul>
+             </li>
+         </nav>
+         <li>
+            <div class="not-prof">
+                <a href="notification.html">
+                    <i class="bi bi-bell-fill"></i>
+                </a>
+                <a href="/dashboard">
+                    <div class="profile-nav-container">
+                        <img src="assets/img/img-p/7.jpg" alt="">
+                    </div>
+                </a>
+            </div>
+        </li>
+     </ul>
+    </div>
+</head>

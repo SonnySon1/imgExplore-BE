@@ -17,8 +17,8 @@
                  <li>
                      <ul>
                          <li><a href="" class="active">Home</a></li>
-                         <li><a href="explore.html">Explore</a></li>
-                         <li><a href="categories.html">Category</a></li>
+                         <li><a href="/explore">Explore</a></li>
+                         <li><a href="/categories">Category</a></li>
                          <li><a href="">About </a></li>
                      </ul>
                  </li>
@@ -31,6 +31,7 @@
         </div>
     </head>
      <!-- //header -->
+
       <!-- background -->
    <div class="shape">
         <div class="child-shape1"></div>
