@@ -124,6 +124,10 @@ ul{
     border: 1px solid #FF5B00;
     box-shadow: 0 0 8px #FF5B00;
 }
+.input-distance-signin small{
+    font-size: 12px;
+    color: red;
+}
 .input-distance-signin button{
     margin-top: 11px;
     padding-top: 10px;
