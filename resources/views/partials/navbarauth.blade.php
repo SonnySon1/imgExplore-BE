@@ -5,9 +5,9 @@
         <nav class="navbar">
              <li>
                  <ul>
-                     <li><a href="/explore" class="{{ Request('/explore') ? 'active' : ' ' }}">Explore</a></li>
-                     <li><a href="/categories" class="{{ Request('/categories') ? 'active' : ' ' }}">Category</a></li>
-                     <li><a href="/upload" class="{{ Request('/upload') ? 'active' : ' ' }}">Create </a></li>
+                     <li><a href="/explore" class="{{ Request::is('explore') ? 'active' : ' ' }}">Explore</a></li>
+                     <li><a href="/categories" class="{{ Request::is('categories') ? 'active' : ' ' }}">Category</a></li>
+                     <li><a href="/upload" class="{{ Request::is('upload') ? 'active' : ' ' }}">Create </a></li>
                  </ul>
              </li>
          </nav>
@@ -18,7 +18,7 @@
                 </a>
                 <a href="/dashboard">
                     <div class="profile-nav-container">
-                        <img src="assets/img/img-p/7.jpg" alt="">
+                        <img src="{{ asset('assets/img/profile/'. Auth::user()->picture) }}" alt="">
                     </div>
                 </a>
             </div>
