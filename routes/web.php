@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,15 +31,15 @@ Route::middleware('guest')->group(function(){
 });
 
 
-Route::get('/explore', function(){
-    return view('pages.explore');
-});
+Route::get('/explore', [ExploreController::class, 'index']);
+Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::middleware('auth')->group(function(){
-
     Route::get('/dashboard', function(){
         return view('pages.dashboard');
     });
+
+    Route::get('/upload', [UploadController::class, 'index']);
 
     Route::get('/signout', [SigninController::class, 'signout']);
 });
