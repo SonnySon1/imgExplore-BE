@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SignupController extends Controller
 {
     // sinup page
     public function index(){
-        return view('pages.signup');
+        return view('pages.auth.signup');
     }
 
     // store
     public function store(Request $request) {
         // validasi data
-            $request->validate([
+           $credentials = $request->validate([
                 'username'=>"required | unique:users,username",
                 'password'=>"required"
             ]);
@@ -41,7 +42,14 @@ class SignupController extends Controller
             $stored_user = User::create($data);
 
         if ($stored_user == true) {
-            return redirect('/explore');
+
+            // login function
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();        
+
+
+                return redirect()->intended('/explore');
+            }
         }
         else{
             return back();
