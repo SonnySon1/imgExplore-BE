@@ -10,7 +10,7 @@
                                 <h2>&#64;{{ Auth::user()->username }} <img src="{{ asset('assets/img/private.png') }}" alt=""></h2>
                                 <div class="container-image-profile">
                                     <div class="wrapping-image-profile"> 
-                                        <img class="image-profile" src="{{ asset('assets/img/img-p/2.png') }}" alt="">
+                                        <img class="image-profile" src="{{ asset('assets/img/profile/'. Auth::user()->picture ) }}" alt="">
                                     </div>
                                 </div>
                                 <div class="information-menu-container">
@@ -48,7 +48,7 @@
                                         <li><a href="" class="follow-menu"><i class="bi bi-person-fill-add"></i></a></li>
                                     </ul>
                                 </div>
-                                <div class="image-container" id="posts">
+                                <div class="image-container-profile" id="posts">
                                     <a href="image-detail"><img src="{{ asset('assets/img/img-e/1.jpg') }}" alt=""></a>
                                     <a href="image-detail"><img src="{{ asset('assets/img/img-e/2.jpg') }}" alt=""></a>
                                     <a href="image-detail"><img src="{{ asset('assets/img/img-e/3.webp') }}" alt=""></a>

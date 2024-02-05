@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/upload.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/review.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/review-detail.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>

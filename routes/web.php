@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ExploreController;
-use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\UploadController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExploreController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,8 @@ Route::middleware('auth')->group(function(){
         return view('pages.dashboard');
     });
 
+    Route::get('/review', [ReviewController::class, 'index']);
+    Route::get('/review/detail', [ReviewController::class, 'show']);
     Route::get('/upload', [UploadController::class, 'index']);
     Route::get('/signout', [SigninController::class, 'signout']);
     Route::get('/profile', [ProfileController::class, 'index']);

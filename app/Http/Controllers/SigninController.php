@@ -9,7 +9,7 @@ class SigninController extends Controller
 {
     //sign in Page
     public function index(){
-            return view('pages.signin');
+            return view('pages.auth.signin');
     }
 
     // sign in store
@@ -24,7 +24,7 @@ class SigninController extends Controller
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
 
-                return view('pages.explore');
+                return redirect()->intended('pages.explore');
             }
             else{
                 return back()->with('error', 'Incorrect Username / Password');

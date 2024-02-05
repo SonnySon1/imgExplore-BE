@@ -172,7 +172,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     justify-content: center; 
 }
 .wrapping-image-profile{
-    background-color: red;
+    background-color: #2D293C;
     margin-top: 25px;
     width: 141px;
     position: relative;
@@ -234,19 +234,19 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     border: 1px solid #FF5B00;
 
 }
-.container .image-container{
+.container .image-container-profile{
     columns: 5 250px;
     margin-top: 44px;
     gap:5px;
 }
-.image-container img{
+.image-container-profile img{
     margin-bottom: 5px;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
-.image-container img:hover{
+.image-container-profile img:hover{
    filter: grayscale(1);
    transform: scale(1.02);
 }
