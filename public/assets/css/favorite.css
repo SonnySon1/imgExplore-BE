@@ -189,19 +189,19 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
 .wrapping-user-info:hover{
     background-color: #161a1fc3;
 }
-.container .image-container{
+.container .image-container-favorite{
     columns: 5 250px;
     margin-top: 44px;
     gap:5px;
 }
-.image-container img{
+.image-container-favorite img{
     margin-bottom: 5px;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
-.image-container img:hover{
+.image-container-favorite img:hover{
    filter: grayscale(1);
    transform: scale(1.02);
 }

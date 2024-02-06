@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class FavoriteController extends Controller
 {
-    //categories page
+    //favorite page
         public function index(){
-            return view('pages.categories');
+            return view('pages.profile.favorite');
         }
-
-   
 }
