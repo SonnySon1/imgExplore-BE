@@ -9,6 +9,7 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\UploadedController;
 use App\Models\Favorite;
 
 /*
@@ -44,10 +45,15 @@ Route::middleware('auth')->group(function(){
         return view('pages.dashboard');
     });
 
+    Route::get('/uploaded', [UploadedController::class, 'index']);
+    Route::get('/uploaded/edit', [UploadedController::class, 'edit']);
+
     Route::get('/review', [ReviewController::class, 'index']);
     Route::get('/review/detail', [ReviewController::class, 'show']);
+
     Route::get('/upload', [UploadController::class, 'index']);
     Route::post('/upload/store', [UploadController::class, 'store']);
+
     Route::get('/signout', [SigninController::class, 'signout']);
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
