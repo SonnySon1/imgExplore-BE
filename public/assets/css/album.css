@@ -216,7 +216,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     object-fit: cover;
 }
 
-.input-search{
+.input-search-album{
     padding: 10px;
     width: 70%;
     background-color: transparent;
@@ -225,12 +225,12 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     color: white;
     transition: all .3s ease-in-out;
 }
-.input-search:focus{
+.input-search-album:focus{
     box-shadow: 0 0 8px #FF5B00;
     border: 1px solid #FF5B00;
     outline: none;
 }
-.btn-search{
+.btn-search-album{
     padding: 6px;
     cursor: pointer;
     position: relative;
@@ -284,11 +284,17 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     background-color: #20262C;
     width: 50%;
     height: 100%;
+    overflow: hidden;
 }
 .cover-album-foto img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: all .3s ease-in-out;
+}
+.cover-album-foto img:hover{
+   filter: grayscale(1);
+    transform: scale(1.03);
 }
 .container-info-album{
     display: flex;

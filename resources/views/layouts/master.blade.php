@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/uploaded.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/followers.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/following.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/album.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/add-album.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/update-album.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>

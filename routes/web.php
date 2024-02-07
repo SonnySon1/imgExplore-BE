@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlbumController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SigninController;
@@ -56,6 +57,12 @@ Route::middleware('auth')->group(function(){
     Route::post('/upload/store', [UploadController::class, 'store']);
 
     Route::get('/signout', [SigninController::class, 'signout']);
+
+    Route::get('/album', [AlbumController::class, 'index']);
+    Route::get('/album/detail', [AlbumController::class, 'show']);
+    Route::get('/album/create', [AlbumController::class, 'create']);
+    Route::get('/album/edit', [AlbumController::class, 'edit']);
+
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
     Route::get('/profile/followers', [ProfileController::class, 'followers']);
