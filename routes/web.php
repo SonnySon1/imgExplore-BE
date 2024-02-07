@@ -9,6 +9,7 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\FollowersController;
 use App\Http\Controllers\UploadedController;
 use App\Models\Favorite;
 
@@ -57,4 +58,6 @@ Route::middleware('auth')->group(function(){
     Route::get('/signout', [SigninController::class, 'signout']);
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
+    Route::get('/profile/followers', [ProfileController::class, 'followers']);
+    Route::get('/profile/following', [ProfileController::class, 'following']);
 });
