@@ -22,13 +22,13 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a href="followers.html">
+                                            <a href="/profile/followers">
                                                 <h3>212k</h3>
                                                 <p>Followers</p>
                                             </a>
                                         </div>
                                         <div>
-                                            <a href="following.html">
+                                            <a href="/profile/following">
                                                 <h3>20</h3>
                                                 <p>Following</p>
                                             </a>

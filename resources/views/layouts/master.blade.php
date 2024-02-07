@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/favorite.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/image-detail.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/uploaded.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/followers.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/following.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
