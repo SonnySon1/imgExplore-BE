@@ -14,7 +14,7 @@
                                 <a href="/album"><i class="bi bi-images"></i> Album</a>
                                 <a href="/review"><i class="bi bi-eye-fill"></i> Reviw</a>
                                 <a href="/admin/category"><i class="bi bi-layers-fill"></i> Categories</a>
-                                <a href="/users"><i class="bi bi-people-fill"></i> Users</a>
+                                <a href="/admin/users"><i class="bi bi-people-fill"></i> Users</a>
                                 <a href="/profile"><i class="bi bi-person-circle"></i> Profile</a>
                                 <a href="/signout"><i class="bi bi-box-arrow-right"></i> Sign Out</a>
                             </div>

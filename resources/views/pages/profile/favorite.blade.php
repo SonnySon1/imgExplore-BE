@@ -7,7 +7,7 @@
                     <div class="wrapping-elemet">
                         <div class="header-title">
                             <p>Favorite by <strong>Virelix</strong></p>
-                            <a href="profile.html">
+                            <a href="/dashboard">
                                 <i class="bi bi-x-circle-fill close-button"></i>
                             </a>
                         </div>

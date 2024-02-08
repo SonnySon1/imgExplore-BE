@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/update-category.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/notification.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/detail-notification.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/users.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/update-users.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
