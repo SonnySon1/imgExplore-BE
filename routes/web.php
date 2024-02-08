@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AlbumController;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\UploadController;
@@ -10,9 +10,10 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\FollowersController;
 use App\Http\Controllers\UploadedController;
-use App\Models\Favorite;
+use App\Http\Controllers\FollowersController;
+use App\Http\Controllers\ReviewAdminController;
+use App\Http\Controllers\CategoryAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +51,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/uploaded', [UploadedController::class, 'index']);
     Route::get('/uploaded/edit', [UploadedController::class, 'edit']);
 
-    Route::get('/review', [ReviewController::class, 'index']);
-    Route::get('/review/detail', [ReviewController::class, 'show']);
+    Route::get('/review', [ReviewAdminController::class, 'index']);
+    Route::get('/review/detail', [ReviewAdminController::class, 'show']);
 
     Route::get('/upload', [UploadController::class, 'index']);
     Route::post('/upload/store', [UploadController::class, 'store']);
@@ -67,4 +68,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
     Route::get('/profile/followers', [ProfileController::class, 'followers']);
     Route::get('/profile/following', [ProfileController::class, 'following']);
+
+    Route::get('/admin/category', [CategoryAdminController::class, 'index']);
+    Route::get('/admin/category/create', [CategoryAdminController::class, 'create']);
+    Route::get('/admin/category/edit', [CategoryAdminController::class, 'edit']);
 });
