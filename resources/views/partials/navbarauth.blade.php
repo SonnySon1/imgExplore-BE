@@ -13,7 +13,7 @@
          </nav>
          <li>
             <div class="not-prof">
-                <a href="notification.html">
+                <a href="/notification">
                     <i class="bi bi-bell-fill"></i>
                 </a>
                 <a href="/dashboard">

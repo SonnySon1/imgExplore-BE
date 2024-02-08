@@ -14,6 +14,7 @@ use App\Http\Controllers\UploadedController;
 use App\Http\Controllers\FollowersController;
 use App\Http\Controllers\ReviewAdminController;
 use App\Http\Controllers\CategoryAdminController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,4 +73,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/category', [CategoryAdminController::class, 'index']);
     Route::get('/admin/category/create', [CategoryAdminController::class, 'create']);
     Route::get('/admin/category/edit', [CategoryAdminController::class, 'edit']);
+
+    Route::get('/notification', [NotificationController::class, 'index']);
+    Route::get('/notification/detail', [NotificationController::class, 'show']);
 });
