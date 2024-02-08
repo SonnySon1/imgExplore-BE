@@ -12,9 +12,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\UploadedController;
 use App\Http\Controllers\FollowersController;
+use App\Http\Controllers\UsersAdminController;
 use App\Http\Controllers\ReviewAdminController;
-use App\Http\Controllers\CategoryAdminController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\CategoryAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,7 +74,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/category', [CategoryAdminController::class, 'index']);
     Route::get('/admin/category/create', [CategoryAdminController::class, 'create']);
     Route::get('/admin/category/edit', [CategoryAdminController::class, 'edit']);
+    
+    Route::get('/admin/users', [UsersAdminController::class, 'index']);
+    Route::get('/admin/users/edit', [UsersAdminController::class, 'edit']);
+
 
     Route::get('/notification', [NotificationController::class, 'index']);
     Route::get('/notification/detail', [NotificationController::class, 'show']);
+
+
 });
