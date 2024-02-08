@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+class ReviewAdminController extends Controller
 {
     //review page
     public function index(){

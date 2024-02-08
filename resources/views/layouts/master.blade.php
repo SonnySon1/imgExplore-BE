@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/album.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/add-album.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/update-album.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/category.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/add-category.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/update-category.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
