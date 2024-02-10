@@ -54,7 +54,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/uploaded/edit', [UploadedController::class, 'edit']);
 
     Route::get('/review', [ReviewAdminController::class, 'index']);
-    Route::get('/review/detail', [ReviewAdminController::class, 'show']);
+    Route::get('/review/detail={photo:uuid}', [ReviewAdminController::class, 'show']);
+    Route::post('/review/detail/store={photo:uuid}', [ReviewAdminController::class, 'store']);
 
     Route::get('/upload', [UploadController::class, 'index']);
     Route::post('/upload/store', [UploadController::class, 'store']);

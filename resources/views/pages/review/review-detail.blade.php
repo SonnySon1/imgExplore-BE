@@ -5,7 +5,7 @@
             <div class="main">
                 <div class="container">
                     <div class="container-hiro-detail">
-                        <img class="hiro-detail" src="{{ asset('assets/img/img-p/8.jpg') }}">
+                        <img class="hiro-detail" src="{{ asset('assets/img/img-e/'.$photo->file_location) }}">
                     </div>
                     <div class="bar-fun-conainer">
                         <div>
@@ -14,17 +14,17 @@
                         </div>
                         <div>
                             <i class="bi bi-hand-thumbs-up"></i>
-                            <p>280k</p>   
+                            <p>0</p>   
                         </div>
                         <div>
                             <i class="bi bi-chat-dots"></i>
-                            <p>239k</p>   
+                            <p>0</p>   
                         </div>
                     </div>
-                    <h1 class="img-title-detail">Magnificent palace in the mountains</h1>
+                    <h1 class="img-title-detail">{{ $photo->photo_title }}</h1>
                     <div class="profile-container">
                         <div class="img-profile-container">
-                            <img class="profile-image-detail" src="{{ asset('assets/img/img-p/1.jpg') }}">
+                            <img class="profile-image-detail" src="{{ asset('assets/img/profile/'.$photo->user->picture) }}">
                         </div>
                         <div class="text-profile">
                             <div>
@@ -41,10 +41,10 @@
                         </div>
                     </div>
                     <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. 
+                        {{ $photo->photo_description }} 
                     </p>
                     <div>
-                        <button class="category-tag">Photography</button>
+                        <button class="category-tag">{{ $photo->category->name }}</button>
                     </div>
                     <div class="container-option">
                         <div class="option-wrapping">
@@ -54,18 +54,25 @@
                                         <div>
                                             <h4>Option</h4>
                                         </div>
-                                        <form action="" class="form-input-detail">
+                                        <form action="/review/detail/store={{ $photo->uuid }}" method="POST" class="form-input-detail">
+                                            @csrf
                                             <div class="input-distance-upload">
                                                 <label for="publis-reject">Publish or reject<span>*</span></label>
-                                                <select class="input-form" name="" id="publis-reject">
-                                                    <option value=""></option>
-                                                    <option value="">Publish</option>
-                                                    <option value="">Reject</option>
+                                                <select class="input-form" name="set_status" id="publis-reject">
+                                                    <option value="">--select option--</option>
+                                                    <option value="1">Publish</option>
+                                                    <option value="2">Reject</option>
                                                 </select>
+                                                @error('set_status')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
                                             </div>
                                             <div class="input-distance-upload">
                                                 <label for="choose_photo">Message<span>*</span></label>
-                                                <input class="input-form" type="text" id="choose_photo">
+                                                <input class="input-form" name="message" type="text" id="choose_photo">
+                                                @error('message')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
                                             </div>
                                             <div class="input-distance-upload">
                                                 <button type="submit">Send</button>
