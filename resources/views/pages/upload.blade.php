@@ -18,7 +18,7 @@
                                     <img id="output_image" alt="" class="display-none-image-upload">
                                 </div>
                                 <div class="form-input-upload">
-                                    <form action="/upload/store" method="post">
+                                    <form action="/upload/store" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="input-distance-upload">
                                             <label for="choose_photo">Choose Photo<span>*</span></label>
@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="input-distance-upload">
                                             <label for="photo_title">Title<span>*</span></label>
-                                            <input name="photo_title" class="input-form" type="text" id="photo_title">
+                                            <input name="photo_title" class="input-form" type="text" id="photo_title" value="{{ old('photo_title') }}">
                                             @error('photo_title')
                                                     <small>{{ $message }}</small>
                                             @enderror
@@ -38,7 +38,9 @@
                                             <label for="category">Category<span>*</span></label>
                                             <select name="category" class="input-form" name="" id="category">
                                                 <option value=""></option>
-                                                <option value="1">Modern Art</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
                                             </select>
                                             @error('category')
                                                     <small>{{ $message }}</small>
@@ -46,7 +48,7 @@
                                         </div>
                                         <div class="input-distance-upload">
                                             <label for="photo_description">Description<span>*</span></label>
-                                            <input name="photo_description" class="input-form" type="text" id="photo_description">
+                                            <input name="photo_description" class="input-form" type="text" id="photo_description" value="{{ old('photo_description') }}">
                                             @error('photo_description')
                                                     <small>{{ $message }}</small>
                                             @enderror
