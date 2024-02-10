@@ -42,7 +42,7 @@ Route::middleware('guest')->group(function(){
 
 
 Route::get('/explore', [ExploreController::class, 'index']);
-Route::get('/explore/detail', [ExploreController::class, 'show']);
+Route::get('/explore/detail={photo:uuid}', [ExploreController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::middleware('auth')->group(function(){

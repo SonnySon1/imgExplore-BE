@@ -22,21 +22,23 @@
                                         </tr>
                                     </thead>
                                     <tbody class="table-body">
-                                        <tr>
-                                            <td>
-                                                <div class="title-review">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                </div>
-                                            </td>
-                                            <td>Art</td>
-                                            <td>
-                                                <div class="btn-group" style="display: flex; align-items: center;">
-                                                    <a href="image-detail.html" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
-                                                    <a href="/uploaded/edit" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
-                                                    <a href="" class="button-action delete-btn"><i class="bi bi-trash"></i></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @foreach ($data_uploadeds as $data_uploaded)
+                                            <tr>
+                                                <td>
+                                                    <div class="title-review">
+                                                       {{$data_uploaded->photo_title}}
+                                                    </div>
+                                                </td>
+                                                <td>{{$data_uploaded->category->name}}</td>
+                                                <td>
+                                                    <div class="btn-group" style="display: flex; align-items: center;">
+                                                        <a href="/explore/detail={{ $data_uploaded->uuid }}" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
+                                                        <a href="/uploaded/edit" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
+                                                        <a href="" class="button-action delete-btn"><i class="bi bi-trash"></i></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
