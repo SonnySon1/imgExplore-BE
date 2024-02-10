@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UploadedController extends Controller
 {
     //uploaded page
     public function index(){
-        return view('pages.uploaded.uploaded');
+        $data_uploadeds = Photo::where('user_id', Auth::user()->id)->with('category')->get(); 
+        return view('pages.uploaded.uploaded', compact('data_uploadeds'));
     }
     
     // edit view

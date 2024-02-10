@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class ExploreController extends Controller
@@ -12,7 +13,7 @@ class ExploreController extends Controller
     }
 
     // show page
-    public function show(){
-        return view('pages.image-detail');
+    public function show(Photo $photo){
+        return view('pages.image-detail', compact('photo'));
     }
 }
