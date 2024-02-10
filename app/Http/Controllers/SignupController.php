@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +36,8 @@ class SignupController extends Controller
             $data = [
                 'username'  =>  $request->username,
                 'password'  =>  bcrypt($request->password),
-                'picture'   => $shuffle_result
+                'picture'   => $shuffle_result,
+                'uuid'   => Str::uuid(),
             ];
 
         // store data to users table 

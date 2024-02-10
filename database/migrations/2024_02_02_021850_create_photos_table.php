@@ -23,6 +23,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status_active', [0 , 1, 2])->default(0);
             $table->enum('allow_comments', [0 , 1 ])->default(1);
+            $table->uuid('uuid')->unique;
             $table->timestamps();
         });
     }

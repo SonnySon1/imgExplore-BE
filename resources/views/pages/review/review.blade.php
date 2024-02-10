@@ -23,27 +23,29 @@
                                         </tr>
                                     </thead>
                                     <tbody class="table-body">
-                                        <tr>
-                                            <td>
-                                                <div class="title-review">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                </div>
-                                            </td>
-                                            <td>Art</td>
-                                            <td>
-                                                <div class="aurhor-container-table">
-                                                    <div class="image-profileauthor-container">
-                                                        <img src="assets/img/img-p/6.jpg" alt="">
+                                        @foreach ($data_reviews as $data_review)
+                                            <tr>
+                                                <td>
+                                                    <div class="title-review">
+                                                        {{ $data_review->photo_title }}
                                                     </div>
-                                                    Lumenix
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="/review/detail" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                                <td>{{ $data_review->category->name }}</td>
+                                                <td>
+                                                    <div class="aurhor-container-table">
+                                                        <div class="image-profileauthor-container">
+                                                            <img src="{{ asset('assets/img/profile/'.$data_review->user->picture) }}" alt="">
+                                                        </div>
+                                                        {{ $data_review->user->name }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="/review/detail={{ $data_review->uuid }}" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>    
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
