@@ -42,7 +42,7 @@ Route::middleware('guest')->group(function(){
 
 
 Route::get('/explore', [ExploreController::class, 'index']);
-Route::get('/explore/detail={photo:uuid}', [ExploreController::class, 'show']);
+Route::get('/explore/show={photo:uuid}', [ExploreController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::middleware('auth')->group(function(){
@@ -54,8 +54,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/uploaded/edit', [UploadedController::class, 'edit']);
 
     Route::get('/review', [ReviewAdminController::class, 'index']);
-    Route::get('/review/detail={photo:uuid}', [ReviewAdminController::class, 'show']);
-    Route::post('/review/detail/store={photo:uuid}', [ReviewAdminController::class, 'store']);
+    Route::get('/review/show={photo:uuid}', [ReviewAdminController::class, 'show']);
+    Route::post('/review/show/store={photo:uuid}', [ReviewAdminController::class, 'store']);
 
     Route::get('/upload', [UploadController::class, 'index']);
     Route::post('/upload/store', [UploadController::class, 'store']);
@@ -63,8 +63,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/signout', [SigninController::class, 'signout']);
 
     Route::get('/album', [AlbumController::class, 'index']);
-    Route::get('/album/detail', [AlbumController::class, 'show']);
+    Route::get('/album/show={album:album_name}', [AlbumController::class, 'show']);
     Route::get('/album/create', [AlbumController::class, 'create']);
+    Route::post('/album/store', [AlbumController::class, 'store']);
     Route::get('/album/edit', [AlbumController::class, 'edit']);
 
     Route::get('/profile', [ProfileController::class, 'index']);
@@ -84,7 +85,7 @@ Route::middleware('auth')->group(function(){
 
 
     Route::get('/notification', [NotificationController::class, 'index']);
-    Route::get('/notification/detail', [NotificationController::class, 'show']);
+    Route::get('/notification/show', [NotificationController::class, 'show']);
 
 
 });

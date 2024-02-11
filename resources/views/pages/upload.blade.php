@@ -57,7 +57,9 @@
                                             <label for="album">Album</label>
                                             <select name="album" class="input-form" name="" id="album">
                                                 <option value=""></option>
-                                                <option value="2">Al 2</option>
+                                                @foreach ($albums as $album)
+                                                    <option value="{{ $album->id }}">{{ $album->album_name }}</option>
+                                                @endforeach
                                             </select>
                                             @error('album')
                                                 <small>{{ $message }}</small>

@@ -13,7 +13,7 @@
                         </div>
                         <div>
                             <div class="container-user-info">
-                                <a href="/notification/detail">
+                                <a href="/notification/show">
                                     <div class="wrapping-user-info">
                                         <div class="profile-user-followers">
                                             <img src="assets/img/img-p/9.jpg" alt="">
@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="/notification/detail">
+                                <a href="/notification/show">
                                     <div class="wrapping-user-info">
                                         <div class="profile-user-followers">
                                             <img src="assets/img/img-p/9.jpg" alt="">
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="/notification/detail">
+                                <a href="/notification/show">
                                     <div class="wrapping-user-info">
                                         <div class="profile-user-followers">
                                             <img src="assets/img/img-p/9.jpg" alt="">

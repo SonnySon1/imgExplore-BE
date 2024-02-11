@@ -250,7 +250,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     gap: 20px;
     align-content: auto;
 }
-.plus-button-album{
+.edit-button-album{
     display: flex;
     padding-left:  20px;
     color: white;
@@ -260,17 +260,16 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     align-items: center;
     transition: all .3s ease-in-out;
 }
-.plus-button-album:hover{
+.edit-button-album:hover{
     box-shadow: 0 0 20px #FF5B00;
 }
-.container-album-photo {
+.container-album-photo-detail {
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 22px;
 }
-
-.wrapping-album-photos {
+.wrapping-album-photos-detail {
     margin-top: 26px;
     display: flex;
     background-color: #20262C;
@@ -279,28 +278,24 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     border-radius: 10px;
     overflow: hidden;
 }
-.cover-album{
-    width: 50%;
-    height: 100%;
-    background-color: #FF5B00;
-}
-.cover-album-foto{
+
+.cover-album-foto-detail{
     background-color: #20262C;
-    width: 50%;
+    width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.cover-album-foto img{
+.cover-album-foto-detail img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: all .3s ease-in-out;
 }
-.cover-album-foto img:hover{
+.cover-album-foto-detail img:hover{
    filter: grayscale(1);
     transform: scale(1.03);
 }
-.container-info-album{
+.container-info-album-detail{
     display: flex;
     align-items: center;
     justify-content: space-between;

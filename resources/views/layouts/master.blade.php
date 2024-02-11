@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/followers.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/following.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/album.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/detail-album.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/add-album.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/update-album.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/category.css') }}">
