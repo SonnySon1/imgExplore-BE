@@ -25,20 +25,22 @@
                                         </tr>
                                     </thead>
                                     <tbody class="table-body">
-                                        <tr>
-                                            <td>Art</td>
-                                            <td>
-                                                <div class="des-category">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="/admin/category/edit" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
-                                                    <a href="" class="button-action delete-btn"><i class="bi bi-trash"></i></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @foreach ($data_categories as $data_category)
+                                            <tr>
+                                                <td>{{ $data_category->name }}</td>
+                                                <td>
+                                                    <div class="des-category">
+                                                        {{  $data_category->description }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a href="/admin/category/edit={{ $data_category->name }}" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
+                                                        <a href="/admin/category/delete={{$data_category->name}}" class="button-action delete-btn"><i class="bi bi-trash"></i></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

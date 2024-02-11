@@ -17,8 +17,8 @@ class SigninController extends Controller
     public function store(Request $request){
         // validate data
             $credentials = $request->validate([
-                'username' => 'required',
-                'password' => 'required'
+                'username' => ['required'],
+                'password' => ['required']
             ]);
 
         // signin data check

@@ -23,8 +23,8 @@ class ReviewAdminController extends Controller
     // store review
     public function store(Request $request, Photo $photo ){
         $request->validate([
-            'set_status'    =>  "required",
-            'message'       =>'required'
+            'set_status'    =>  ['required'],
+            'message'       =>['required']
         ]);
 
         $photo->update(['status_active' => $request->input('set_status')]);
