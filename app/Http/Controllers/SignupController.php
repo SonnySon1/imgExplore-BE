@@ -18,8 +18,8 @@ class SignupController extends Controller
     public function store(Request $request) {
         // validasi data
            $credentials = $request->validate([
-                'username'=>"required | unique:users,username",
-                'password'=>"required"
+                'username'=>['required', 'unique:users,username'],
+                'password'=>['required']
             ]);
         
         // Random profile photo

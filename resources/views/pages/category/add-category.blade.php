@@ -14,18 +14,28 @@
                         <div>
                             <div class="container-add-category">
                                 <div class="form-input-add-category">
-                                    <form action="" method="post">
+                                    <form action="/admin/category/store" method="post" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="input-distance-add-category">
                                             <label for="cover">Cover<span>*</span></label>
-                                            <input class="input-form" type="file" id="cover">
+                                            <input name="cover" class="input-form" type="file" id="cover" value="{{ old('cover') }}">
+                                            @error('cover')
+                                                <small>{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="input-distance-add-category">
                                             <label for="name">Name<span>*</span></label>
-                                            <input class="input-form" type="text" id="name">
+                                            <input name="name" class="input-form" type="text" id="name" value="{{ old('name') }}">
+                                            @error('name')
+                                                <small>{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="input-distance-add-category">
                                             <label for="description">Description<span>*</span></label>
-                                            <input class="input-form" type="text" id="description">
+                                            <input name="description" class="input-form" type="text" id="description" value="{{ old('description') }}">
+                                            @error('description')
+                                                <small>{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="input-distance-add-category">
                                             <button type="submit">Add Category</button>
