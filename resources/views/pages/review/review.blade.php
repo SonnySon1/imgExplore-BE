@@ -41,7 +41,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a href="/review/detail={{ $data_review->uuid }}" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
+                                                        <a href="/review/show={{ $data_review->uuid }}" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>    

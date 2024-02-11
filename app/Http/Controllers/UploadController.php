@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Album;
 use App\Models\Photo;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +14,8 @@ class UploadController extends Controller
     //upload page
         public function index(){
             $categories = Category::all();
-            return view('pages.upload', compact('categories'));
+            $albums = Album::where('user_id', Auth::user()->id)->get();
+            return view('pages.upload', compact('categories', 'albums'));
         }
 
     // upload store
@@ -36,7 +39,8 @@ class UploadController extends Controller
                 'album_id' => $request->album,
                 'category_id' => $request->category,
                 'user_id' => Auth::user()->id,
-                'allow_comments' => is_null($request->allow_comments) ? '1' : $request->allow_comments
+                'allow_comments' => is_null($request->allow_comments) ? '1' : $request->allow_comments,
+                'uuid' => Str::uuid()
             ];
 
             Photo::create($photo_data);

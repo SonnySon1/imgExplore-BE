@@ -54,7 +54,7 @@
                                         <div>
                                             <h4>Option</h4>
                                         </div>
-                                        <form action="/review/detail/store={{ $photo->uuid }}" method="POST" class="form-input-detail">
+                                        <form action="/review/show/store={{ $photo->uuid }}" method="POST" class="form-input-detail">
                                             @csrf
                                             <div class="input-distance-upload">
                                                 <label for="publis-reject">Publish or reject<span>*</span></label>
