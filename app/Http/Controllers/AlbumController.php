@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\Photo;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class AlbumController extends Controller
 {
@@ -37,7 +39,8 @@ class AlbumController extends Controller
                 'cover'          => $cover_name,
                 'album_name'     => $request->album_name,
                 'user_id'        => Auth::user()->id,
-                'description'    => $request->description
+                'description'    => $request->description,
+                'uuid'           => Str::uuid()
             ];
             
             Album::create($data_album_store);
@@ -51,8 +54,38 @@ class AlbumController extends Controller
         }
 
     // page album edit
-        public function edit(){
-            return view('pages.album.update-album');
+        public function edit(Album $album){
+            return view('pages.album.update-album', compact('album'));
+        }
+
+    // update album
+        public function update(Request $request, Album $album){
+                $request->validate([
+                    'album_name'    => ['required', 'unique:albums,album_name,'.$album->id],
+                    'description'   => ['required']
+                ]);
+                
+                $data_album_update = [
+                    'album_name'    => $request->album_name,
+                    'description'   => $request->description
+                ];
+
+                if ($request->hasFile('cover')) {
+                    $request->validate([
+                        'cover' => ['mimes:png,jpg, jpeg, gif'],
+                    ]);
+
+                    $cover_file = $request->files('cover');
+                    $cover_extention = $cover_file->extension();
+                    $cover_name = date('dmyhis').'.'.$cover_extention;
+                    $cover_file->move(public_path('/assets/img/cover/albums/'), $cover_name);
+
+                    File::delete(public_path('/assets/img/cover/albums/'. $album->cover));
+                    $data_album_update['cover'] = $cover_name;
+                }
+
+                $album->update($data_album_update);
+                return redirect('/album')->with('success', 'successfully updated one album');
         }
 
 }

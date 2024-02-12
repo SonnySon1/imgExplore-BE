@@ -7,7 +7,7 @@
                     <div class="wrapping-elemet">
                         <div class="header-title">
                             <p>Album by <strong>{{ Auth::user()->name }}</strong></p>
-                            <a href="/dashboard">
+                            <a href="/album">
                                 <i class="bi bi-x-circle-fill close-button"></i>
                             </a>
                         </div>
@@ -31,7 +31,7 @@
                                         <button class="btn-search-album"><i class="bi bi-search"></i></button>
                                     </div>
                                 </form>
-                                <a href="/album/edit" class="edit-button-album"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/album/edit={{ $album->uuid }}" class="edit-button-album"><i class="bi bi-pencil-square"></i></a>
                         </div>
                         <div class="container-album-photo-detail">
                             @foreach ($data_photos as $data_photo)
@@ -43,7 +43,7 @@
                                     </a>
                                     <div class="container-info-album-detail">
                                         <p>{{ $data_photo->photo_title }}</p>
-                                        <a href="" class="btn-detail-album">Detail</a>
+                                        <a href="/explore/show={{ $data_photo->uuid }}" class="btn-detail-album">Detail</a>
                                     </div>
                                 </div>    
                             @endforeach

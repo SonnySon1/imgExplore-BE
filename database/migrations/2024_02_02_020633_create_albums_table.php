@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('album_name');
             $table->text('description');
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->uuid('uuid')->unique();
             $table->timestamps();
         });
     }
