@@ -63,10 +63,12 @@ Route::middleware('auth')->group(function(){
     Route::get('/signout', [SigninController::class, 'signout']);
 
     Route::get('/album', [AlbumController::class, 'index']);
-    Route::get('/album/show={album:album_name}', [AlbumController::class, 'show']);
+    Route::get('/album/show={album:uuid}', [AlbumController::class, 'show']);
     Route::get('/album/create', [AlbumController::class, 'create']);
     Route::post('/album/store', [AlbumController::class, 'store']);
-    Route::get('/album/edit', [AlbumController::class, 'edit']);
+    Route::get('/album/edit={album:uuid}', [AlbumController::class, 'edit']);
+    Route::post('/album/update={album:uuid}', [AlbumController::class, 'update']);
+
 
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);

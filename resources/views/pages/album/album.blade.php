@@ -31,12 +31,12 @@
                                         <button class="btn-search-album"><i class="bi bi-search"></i></button>
                                     </div>
                                 </form>
-                                <a href="/album/edit" class="plus-button-album"><i class="bi bi-plus-circle-fill"></i></a>
+                                <a href="/album/create" class="plus-button-album"><i class="bi bi-plus-circle-fill"></i></a>
                         </div>
                         <div class="container-album-photo">
                             @foreach ($data_albums as $data_album)
                                 <div>
-                                    <a href="/album/show={{ $data_album->album_name }}">
+                                    <a href="/album/show={{ $data_album->uuid }}">
                                         <div class="wrapping-album-photos">
                                             <div class="cover-album"></div>
                                             <div class="cover-album-foto"> <img src="{{ asset('assets/img/cover/albums/'.$data_album->cover) }}" alt=""></div>
@@ -44,7 +44,7 @@
                                     </a>
                                     <div class="container-info-album">
                                         <p>{{ $data_album->album_name }}</p>
-                                        <a href="/album/show={{ $data_album->album_name }}" class="btn-detail-album">Detail</a>
+                                        <a href="/album/show={{ $data_album->uuid }}" class="btn-detail-album">Detail</a>
                                     </div>
                                 </div>    
                             @endforeach

@@ -1,7 +1,8 @@
 <head>
     <div class="container">
     <ul class="header">
-        <li class="title">.imgExplore</li>
+        {{-- <li class="title">.imgExplore</li> --}}
+        <li class="">.img<strong>Explore</strong></li>
         <nav class="navbar">
              <li>
                  <ul>
