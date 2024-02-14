@@ -24,75 +24,43 @@
                                         </tr>
                                     </thead>
                                     <tbody class="table-body">
-                                        <tr>
-                                            <td>
-                                                <div class="aurhor-container-table">
-                                                    <div class="image-profileauthor-container">
-                                                        <img src="{{ asset('assets/img/img-p/6.jpg') }}" alt="">
+                                        @foreach ($data_users as $data_user)
+                                            <tr>
+                                                <td>
+                                                    <div class="aurhor-container-table">
+                                                        <div class="image-profileauthor-container">
+                                                            <img src="{{ asset('assets/img/profile/'. $data_user->picture)}}" alt="">
+                                                        </div>
+                                                        {{ $data_user->name }}
                                                     </div>
-                                                    Nichole
-                                                </div>
-                                            </td>
-                                            <td>nochole221@gmail.com</td>
-                                            <td>
-                                                <div class="badge badge-red">Admin</div>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-orange">Active</div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group" style="display: flex; align-items: center;">
-                                                    <a href="profile.html" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
-                                                    <a href="/admin/users/edit" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="aurhor-container-table">
-                                                    <div class="image-profileauthor-container">
-                                                        <img src="{{ asset('assets/img/img-p/6.jpg') }}" alt="">
+                                                </td>
+                                                <td>{{ $data_user->email }}</td>
+                                                @if ($data_user->role == "admin")
+                                                    <td>
+                                                        <div class="badge badge-red">Admin</div>
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        <div class="badge badge-navy">User</div>
+                                                    </td>
+                                                @endif
+                                                @if ($data_user->status_active == "1")
+                                                    <td>
+                                                        <div class="badge badge-orange">Active</div>
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        <div class="badge badge-gray">Banned</div>
+                                                    </td>
+                                                @endif
+                                                <td>
+                                                    <div class="btn-group" style="display: flex; align-items: center;">
+                                                        <a href="/profile" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
+                                                        <a href="/admin/users/edit={{ $data_user->uuid }}" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
                                                     </div>
-                                                    Rio
-                                                </div>
-                                            </td>
-                                            <td>rio1110@gmail.com</td>
-                                            <td>
-                                                <div class="badge badge-navy">User</div>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-gray">Banned</div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group" style="display: flex; align-items: center;">
-                                                    <a href="profile.html" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
-                                                    <a href="/admin/users/edit" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="aurhor-container-table">
-                                                    <div class="image-profileauthor-container">
-                                                        <img src="{{ asset('assets/img/img-p/6.jpg') }}" alt="">
-                                                    </div>
-                                                    Rio
-                                                </div>
-                                            </td>
-                                            <td>rio1110@gmail.com</td>
-                                            <td>
-                                                <div class="badge badge-navy">User</div>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-orange">Active</div>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group" style="display: flex; align-items: center;">
-                                                    <a href="profile.html" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
-                                                    <a href="/admin/users/edit" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
