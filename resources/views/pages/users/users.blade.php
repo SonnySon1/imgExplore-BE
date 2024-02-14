@@ -55,7 +55,7 @@
                                                 @endif
                                                 <td>
                                                     <div class="btn-group" style="display: flex; align-items: center;">
-                                                        <a href="/profile" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
+                                                        <a href="/profile?show={{ $data_user->uuid }}" class="button-action detail-btn"><i class="bi bi-eye-fill"></i></a>
                                                         <a href="/admin/users/edit={{ $data_user->uuid }}" class="button-action edit-btn"><i class="bi bi-pencil-square"></i></a>
                                                     </div>
                                                 </td>
