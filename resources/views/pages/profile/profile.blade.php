@@ -7,10 +7,10 @@
                     <div class="wrapping-elemet-profile">
                         <div class="flex-display-center">
                             <div>
-                                <h2>&#64;{{ Auth::user()->username }} <img src="{{ asset('assets/img/private.png') }}" alt=""></h2>
+                                <h2>&#64;{{ $data_user->username }} <img src="{{ asset('assets/img/private.png') }}" alt=""></h2>
                                 <div class="container-image-profile">
                                     <div class="wrapping-image-profile"> 
-                                        <img class="image-profile" src="{{ asset('assets/img/profile/'. Auth::user()->picture ) }}" alt="">
+                                        <img class="image-profile" src="{{ asset('assets/img/profile/'. $data_user->picture ) }}" alt="">
                                     </div>
                                 </div>
                                 <div class="information-menu-container">
