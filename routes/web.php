@@ -83,8 +83,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/category/delete={category:name}', [CategoryAdminController::class, 'destroy']);
     
     Route::get('/admin/users', [UsersAdminController::class, 'index']);
-    Route::get('/admin/users/edit', [UsersAdminController::class, 'edit']);
-
+    Route::get('/admin/users/edit={user:uuid}', [UsersAdminController::class, 'edit']);
+    Route::post('/admin/users/update={user:uuid}', [UsersAdminController::class, 'update']);
 
     Route::get('/notification', [NotificationController::class, 'index']);
     Route::get('/notification/show', [NotificationController::class, 'show']);
