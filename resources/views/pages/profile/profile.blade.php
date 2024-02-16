@@ -45,7 +45,11 @@
                                         <li><a href="" class="active-menu">Posts</a></li>
                                         <li><a href="favorite.html">Favorite</a></li>
                                         <li><a href="">Email</a></li>
-                                        <li><a href="" class="follow-menu"><i class="bi bi-person-fill-add"></i></a></li>
+                                        @if ($data_user->uuid == Auth::user()->uuid)
+                                            <li><a href="" class="follow-menu" hidden><i class="bi bi-person-fill-add"></i></a></li>
+                                        @else
+                                            <li><a href="" class="follow-menu"><i class="bi bi-person-fill-add"></i></a></li>
+                                        @endif
                                     </ul>
                                 </div>
                                 <div class="image-container-profile" id="posts">

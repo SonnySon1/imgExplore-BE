@@ -26,4 +26,9 @@ class Photo extends Model
     public function album(){
             return $this->belongsTo(Album::class);
     }
+
+    // has many to photo
+    public function favorite() {
+            return $this->hasMany(Favorite::class);
+    }
 }

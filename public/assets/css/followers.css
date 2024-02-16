@@ -189,14 +189,14 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
 .wrapping-user-info:hover{
     background-color: #161a1fc3;
 }
-.profile-user-followers{
+.profile-user-following{
     width: 45px;
     height: 45px;
     position: relative;
     border-radius: 100px;
     background-color: #20262C;
 }
-.profile-user-followers img{
+.profile-user-following img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -227,11 +227,10 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     padding: 12px;
     border-radius: 10px;
     cursor: pointer;
-    /* background-color: #20262C; */
-    background-color: #FF5B00;
+    background-color: #20262C;
     border: none;
     border: 1px solid transparent;
-    color: white;
+    color: rgb(186, 186, 186);
     transition: all .3s ease-in-out;
     display: flex;
     gap: 5px;
