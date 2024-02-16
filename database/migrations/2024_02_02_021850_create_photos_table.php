@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('photo_title');
             $table->text('photo_description');
             $table->string('file_location');
-            $table->foreignId('album_id')->references('id')->on('albums')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('album_id')->references('id')->on('albums')->onUpdate('cascade')->onDelete('cascade')->nullable();
             $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status_active', [0 , 1, 2])->default(0);

@@ -54,4 +54,9 @@ class User extends Authenticatable
     public function favorite(){
         return $this->hasMany(Favorite::class);
     }
+
+    // has many to follow
+    public function follow(){
+        return $this->hasMany(Follow::class, 'to', 'id');
+    } 
 }
