@@ -16,6 +16,7 @@ use App\Http\Controllers\UsersAdminController;
 use App\Http\Controllers\ReviewAdminController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\CategoryAdminController;
+use App\Http\Controllers\FollowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,6 +89,8 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/notification', [NotificationController::class, 'index']);
     Route::get('/notification/show', [NotificationController::class, 'show']);
+
+    Route::post('/follow/user', [FollowController::class, 'store']);
 
 
 });

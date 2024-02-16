@@ -219,6 +219,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
 .ber-container ul{
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 .ber-container a{
     text-decoration: none;
@@ -253,8 +254,35 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
 .active-menu{
     border: 1px solid #FF5B00 !important;
 }
-.follow-menu{
+.follow-menu-profile{
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
     background-color: #FF5B00 !important;
+}
+.follow-menu-profile:hover{
+    box-shadow: 0 0 20px #FF5B00;
+}
+.follow-menu-profile-follow{
+    text-decoration: none;
+    border: 1px solid transparent;
+    background-color: #20262C;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.follow-menu-profile-follow:hover{
+    border: 1px solid #FF5B00;
 }
 /* //body */
 
