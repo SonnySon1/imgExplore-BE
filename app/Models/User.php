@@ -49,4 +49,9 @@ class User extends Authenticatable
     public function album(){
         return $this->hasMany(Album::class);
     }
+
+    // has many to favorite
+    public function favorite(){
+        return $this->hasMany(Favorite::class);
+    }
 }
