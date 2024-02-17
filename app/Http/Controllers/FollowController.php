@@ -29,8 +29,5 @@ class FollowController extends Controller
             Follow::create($data_follow);
 
         }
-
-
-        return response()->json();
     }
 }

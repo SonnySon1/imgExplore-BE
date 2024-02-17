@@ -23,7 +23,7 @@
                                         </div>
                                         <div>
                                             <a href="/profile/followers">
-                                                <h3>212k</h3>
+                                                <h3 id="counter-follow">{{ $data_user->follow->count() }}</h3>
                                                 <p>Followers</p>
                                             </a>
                                         </div>
@@ -48,11 +48,19 @@
                                         @if ($data_user->uuid == Auth::user()->uuid)
                                             <li><a href="" class="follow-menu" hidden><i class="bi bi-person-fill-add"></i></a></li>
                                         @else
-                                        <form id="followForm">
-                                            @csrf
-                                            <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
-                                            <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
-                                        </form>
+                                            @if ($data_follow)
+                                                <form id="followForm">
+                                                    @csrf
+                                                    <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
+                                                    <li><button id="button-follow-profile" type="button" class="follow-menu-profile-follow"><i id="follow-icon" class="bi bi-person-x-fill"></i></button></li>
+                                                </form>
+                                            @else
+                                                <form id="followForm">
+                                                    @csrf
+                                                    <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
+                                                    <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
+                                                </form>
+                                            @endif
                                         @endif
                                     </ul>
                                 </div>
