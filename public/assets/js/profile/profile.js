@@ -33,8 +33,10 @@ $('#button-follow-profile').click(function(){
       data: formData,
       
 
-      success: function(response){
-        console.log(response);      },
+      success: function(response){    
+        // var counterFollow = parseInt($('#counter-follow').text())
+        // $('#counter-follow').text(counterFollow + 1);
+    },
 
       error:function(response){
           console.log('error');
