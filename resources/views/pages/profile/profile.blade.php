@@ -45,9 +45,7 @@
                                         <li><a href="" class="active-menu">Posts</a></li>
                                         <li><a href="favorite.html">Favorite</a></li>
                                         <li><a href="">Email</a></li>
-                                        @if ($data_user->uuid == Auth::user()->uuid)
-                                            <li><a href="" class="follow-menu" hidden><i class="bi bi-person-fill-add"></i></a></li>
-                                        @else
+                                        @if ($data_user->uuid !== Auth::user()->uuid)
                                             @if ($data_follow)
                                                 <form id="followForm">
                                                     @csrf
@@ -61,6 +59,7 @@
                                                     <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
                                                 </form>
                                             @endif
+                                            
                                         @endif
                                     </ul>
                                 </div>
