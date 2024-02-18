@@ -52,5 +52,11 @@
         @yield('content')
     {{-- //content --}}
         
+     <!-- footer -->
+<footer>
+    <div class="footer-container-ath">
+            <p>© Copyright imgExplore. All Rights Reserved Designed by imgExplore</p>
+    </div>
+</footer>
 </body>
 </html>

@@ -257,6 +257,18 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
    filter: grayscale(1);
    transform: scale(1.03);
 }
+
+.footer-container-ath{
+    background-color: #FF5B00;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.footer-container-ath p{
+    width: 300px;
+    font-size: 15px;
+}
 /* //body */
 
 /* responsive design */

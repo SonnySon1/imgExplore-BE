@@ -44,6 +44,7 @@ Route::middleware('guest')->group(function(){
 
 Route::get('/explore', [ExploreController::class, 'index']);
 Route::get('/explore/show={photo:uuid}', [ExploreController::class, 'show']);
+Route::get('/load-more-photos-explore', [ExploreController::class, 'loadMorePhotos']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::middleware('auth')->group(function(){
