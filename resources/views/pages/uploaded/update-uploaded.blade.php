@@ -14,15 +14,14 @@
                         <div>
                             <div class="container-upload">
                                 <div class="wrapping-image-upload">
-                                    {{-- <img src="assets/img/img-e/5.jpg" alt=""> --}}
-                                    <img id="output_image" alt="" class="display-none-image-upload">
+                                    <img src="{{ asset('assets/img/img-e/'.$photo->file_location) }}" alt="">
                                 </div>
                                 <div class="form-input-upload">
-                                    <form action="/upload/store" method="post">
+                                    <form action="/uploaded/update={{ $photo->uuid }}" method="post">
                                         @csrf
                                         <div class="input-distance-upload">
                                             <label for="photo_title">Title<span>*</span></label>
-                                            <input name="photo_title" class="input-form" type="text" id="photo_title">
+                                            <input name="photo_title" class="input-form" type="text" id="photo_title" value="{{ $photo->photo_title}}">
                                             @error('photo_title')
                                                     <small>{{ $message }}</small>
                                             @enderror
@@ -30,8 +29,9 @@
                                         <div class="input-distance-upload">
                                             <label for="category">Category<span>*</span></label>
                                             <select name="category" class="input-form" name="" id="category">
-                                                <option value=""></option>
-                                                <option value="1">Modern Art</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}" @if ($category->id == $photo->category->id) selected @endif>{{ $category->name }}</option>
+                                                @endforeach
                                             </select>
                                             @error('category')
                                                     <small>{{ $message }}</small>
@@ -39,23 +39,24 @@
                                         </div>
                                         <div class="input-distance-upload">
                                             <label for="photo_description">Description<span>*</span></label>
-                                            <input name="photo_description" class="input-form" type="text" id="photo_description">
+                                            <textarea name="photo_description" id="photo_description" class="input-form vertical-textarea" rows="10">{{ $photo->photo_description }}</textarea>
                                             @error('photo_description')
-                                                    <small>{{ $message }}</small>
-                                            @enderror
+                                                <small>{{ $message }}</small>
+                                        @enderror
                                         </div>
                                         <div class="input-distance-upload">
                                             <label for="album">Album</label>
                                             <select name="album" class="input-form" name="" id="album">
-                                                <option value=""></option>
-                                                <option value="2">Al 2</option>
+                                                @foreach ($albums as $album)
+                                                    <option value="{{ $album->id }}" @if ($album->id == $photo->album->id) selected @endif>{{ $album->album_name }}</option>
+                                                @endforeach
                                             </select>
                                             @error('album')
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
                                         <div class="input-distance-upload">
-                                            <input id="allow_comments" name="allow_comments" class="allow_comments"  value="0" type="checkbox">
+                                            <input @if ($photo->allow_comments == 0) checked @endif id="allow_comments" name="allow_comments" class="allow_comments"  value="0" type="checkbox">
                                             <label for="allow_comments" class="allow_comments">don't allow people to comment</label>
                                         </div>
                                         <div class="input-distance-upload">
@@ -70,18 +71,5 @@
             </div>
         </main>
     <!-- //main -->
-
-    <script>
-        document.getElementById("choose_photo").addEventListener("change", function(e) {
-            var output_image = document.getElementById("output_image");
-            var reader = new FileReader();
-            reader.onload = function(){
-                output_image.classList.remove('display-none-image-upload');
-                var output = document.getElementById('output_image');
-                output.src = reader.result;
-            }
-            reader.readAsDataURL(e.target.files[0]);
-        });
-    </script>
     
 @endsection

@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="input-distance-add-category">
                                             <label for="description">Description<span>*</span></label>
-                                            <input name="description" class="input-form" type="text" id="description" value="{{ old('description') }}">
+                                            <textarea name="description" id="description" class="input-form vertical-textarea" rows="10"></textarea>
                                             @error('description')
                                                 <small>{{ $message }}</small>
                                             @enderror

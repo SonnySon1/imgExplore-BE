@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="input-distance-upload">
                                             <label for="photo_description">Description<span>*</span></label>
-                                            <input name="photo_description" class="input-form" type="text" id="photo_description" value="{{ old('photo_description') }}">
+                                            <textarea name="photo_description" id="photo_description " class="input-form vertical-textarea" rows="10">{{ old('photo_description') }}</textarea>
                                             @error('photo_description')
                                                     <small>{{ $message }}</small>
                                             @enderror
