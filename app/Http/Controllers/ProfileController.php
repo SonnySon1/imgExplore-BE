@@ -31,12 +31,14 @@ class ProfileController extends Controller
         }
 
     // followers page
-        public function followers(){
-            return view('pages.profile.followers');
+        public function followers(User $user){
+            $followers = Follow::where('to', $user->id)->get();
+            return view('pages.profile.followers', compact('followers', 'user'));
         }
 
     // following page
-        public function following(){
-            return view('pages.profile.following');
+        public function following(User $user){
+            $followings = Follow::where('from', $user->id)->get();
+            return view('pages.profile.following', compact('followings', 'user'));
         }
 }

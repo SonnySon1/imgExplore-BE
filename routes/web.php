@@ -77,8 +77,8 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
-    Route::get('/profile/followers', [ProfileController::class, 'followers']);
-    Route::get('/profile/following', [ProfileController::class, 'following']);
+    Route::get('/profile/followers={user:uuid}', [ProfileController::class, 'followers']);
+    Route::get('/profile/following={user:uuid}', [ProfileController::class, 'following']);
     Route::get('/load-more-photos-user', [ProfileController::class, 'loadMorePhotosByUser']);
 
 

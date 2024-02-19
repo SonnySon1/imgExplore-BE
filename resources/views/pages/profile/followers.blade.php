@@ -6,21 +6,22 @@
                 <div class="container">
                     <div class="wrapping-elemet">
                         <div class="header-title">
-                            <p>Following by <strong>Virelix</strong></p>
+                            <p>Followers by <strong>{{ $user->name }}</strong></p>
                             <a href="/profile">
                                 <i class="bi bi-x-circle-fill close-button"></i>
                             </a>
                         </div>
                         <div>
                             <div class="container-user-info">
+                                @foreach ($followers as $follower)
                                 <div class="wrapping-user-info">
                                     <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/6.jpg') }}" alt="">
+                                        <img src="{{ asset('assets/img/profile/'.$follower->userFrom->picture) }}" alt="">
                                     </div>
                                     <div class="user-identity">
                                         <div>
-                                            <h5>Yaoo</h5>
-                                            <p>Sit amet, consectetur</p>
+                                            <h5>{{ $follower->userFrom->name }}</h5>
+                                            <p>{{ Str::limit($follower->userFrom->bio, 30 ) }}</p>
                                         </div>
                                         <div class="follow-button-container">
                                             <form action="" method="post">
@@ -29,102 +30,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/7.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Rayho</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/8.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Nychole</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/9.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Ryson</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/10.webp') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Nyca</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/11.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Rysn</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/1.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Nicolio</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
+                                
                             </div>
                         </div>
                     </div>

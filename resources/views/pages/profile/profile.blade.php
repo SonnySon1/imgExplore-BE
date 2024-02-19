@@ -23,14 +23,14 @@
                                             </a>
                                         </div>
                                         <div>
-                                            <a href="/profile/followers">
-                                                <h3 id="counter-follow">{{ $data_user->follow->count() }}</h3>
+                                            <a href="/profile/followers={{ $data_user->uuid }}">
+                                                <h3 id="counter-follow">{{ $data_user->followTo->count() }}</h3>
                                                 <p>Followers</p>
                                             </a>
                                         </div>
                                         <div>
-                                            <a href="/profile/following">
-                                                <h3>20</h3>
+                                            <a href="/profile/following={{ $data_user->uuid }}">
+                                                <h3>{{ $data_user->followFrom->count() }}</h3>
                                                 <p>Following</p>
                                             </a>
                                         </div>
@@ -47,7 +47,7 @@
                                         @if ($data_user->uuid == Auth::user()->uuid)
                                                 <li><a href="/profile/favorite">Favorite</a></li>
                                         @endif
-                                        <li><a href="">Email</a></li>
+                                        <li><a href="mailto:sudrajatsoni48@gmail.com">Email</a></li>
                                         @if ($data_user->uuid !== Auth::user()->uuid)
                                                 @if ($data_follow)
                                                     <form id="followForm">

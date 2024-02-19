@@ -11,7 +11,11 @@ class Follow extends Model
     protected $guarded = [];
 
     // be longto
-    public function user(){
+    public function userTo(){
         return $this->belongsTo(User::class, 'to', 'id');
+    }
+
+    public function userFrom(){
+        return $this->belongsTo(User::class, 'from', 'id');
     }
 }
