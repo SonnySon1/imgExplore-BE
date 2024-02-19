@@ -79,7 +79,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
     Route::get('/profile/followers', [ProfileController::class, 'followers']);
     Route::get('/profile/following', [ProfileController::class, 'following']);
-    Route::get('/load-more-photo-byuser', [ProfileController::class, 'loadMorePhotosByUser']);
+    Route::get('/load-more-photos-user', [ProfileController::class, 'loadMorePhotosByUser']);
 
 
     Route::get('/admin/category', [CategoryAdminController::class, 'index']);

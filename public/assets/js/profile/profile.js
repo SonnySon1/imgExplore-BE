@@ -45,3 +45,44 @@ $('#button-follow-profile').click(function(){
     });
 
   })
+
+
+
+// load photo post
+var page = 1; 
+var loading = false;
+var uuid = window.uuid;
+
+
+// Fungsi untuk memuat foto
+function loadPhotosByUser() {
+    if (!loading) {
+        loading = true;
+        $.ajax({
+            url: '/load-more-photos-user', 
+            type: 'get',
+            data: {
+              'page' : page,
+              'uuid' : uuid
+            },
+            success: function(response) {
+                if(response.data.length > 0) {
+                    response.data.forEach(function(image) {
+                        $('#posts_user').append('<a href="image-detail"><img src="assets/img/img-e/'+ image.file_location + '" alt=""></a>');
+                    });
+                    page++; 
+                    loading = false;
+                }
+            }
+        });
+    }
+}
+
+
+loadPhotosByUser();
+$(window).on('scroll resize', function() {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() * 0.9) {
+        loadPhotosByUser();
+    }
+});
+
