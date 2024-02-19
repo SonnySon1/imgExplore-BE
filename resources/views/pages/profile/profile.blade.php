@@ -2,6 +2,7 @@
 @section('content')
     <!-- main -->
         <main>
+            <p id="uuid" hidden>{{ $data_user->uuid }}</p>
             <div class="main">
                 <div class="container">
                     <div class="wrapping-elemet-profile">
@@ -48,37 +49,30 @@
                                         @endif
                                         <li><a href="">Email</a></li>
                                         @if ($data_user->uuid !== Auth::user()->uuid)
-                                            @if ($data_follow)
-                                                <form id="followForm">
-                                                    @csrf
-                                                    <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
-                                                    <li><button id="button-follow-profile" type="button" class="follow-menu-profile-follow"><i id="follow-icon" class="bi bi-person-x-fill"></i></button></li>
-                                                </form>
-                                            @else
-                                                <form id="followForm">
-                                                    @csrf
-                                                    <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
-                                                    <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
-                                                </form>
-                                            @endif
-                                            
+                                                @if ($data_follow)
+                                                    <form id="followForm">
+                                                        @csrf
+                                                        <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
+                                                        <li><button id="button-follow-profile" type="button" class="follow-menu-profile-follow"><i id="follow-icon" class="bi bi-person-x-fill"></i></button></li>
+                                                    </form>
+                                                @else
+                                                    <form id="followForm">
+                                                        @csrf
+                                                        <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
+                                                        <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
+                                                    </form>
+                                                @endif
+                                        @else
+                                            <form id="followForm" hidden>
+                                                @csrf
+                                                <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
+                                                <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
+                                            </form>
                                         @endif
                                     </ul>
                                 </div>
-                                <div class="image-container-profile" id="posts">
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/1.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/2.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/3.webp') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/4.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/5.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/6.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/7.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/8.webp') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/9.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/10.jpg') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/11.webp') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/12.png') }}" alt=""></a>
-                                    <a href="image-detail"><img src="{{ asset('assets/img/img-e/13.jpg') }}" alt=""></a>
+                                <div class="image-container-profile" id="posts_user">
+                                    {{-- <a href="image-detail"><img src="{{ asset('assets/img/img-e/1.jpg') }}" alt=""></a> --}}
                                 </div>
                             </div>
                         </div>
@@ -87,6 +81,8 @@
             </div>
         </main>
     <!-- //main -->
-    
+    <script>
+        window.uuid = "{{ $data_user->uuid }}";
+    </script>
     <script src="{{ asset('assets/js/profile/profile.js') }}"></script>
 @endsection

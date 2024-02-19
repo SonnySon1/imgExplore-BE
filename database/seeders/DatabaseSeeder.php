@@ -81,7 +81,7 @@ class DatabaseSeeder extends Seeder
 
         // ]); 
 
-        Photo::factory(30)->create();
+        Photo::factory(50)->create();
 
 
         

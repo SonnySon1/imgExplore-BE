@@ -6,6 +6,7 @@ use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Photo;
 
 class ProfileController extends Controller
 {
@@ -21,6 +22,12 @@ class ProfileController extends Controller
             $data_follow = Follow::FirstWhere('from', Auth::user()->id);
 
             return view('pages.profile.profile', compact('data_user', 'data_follow'));
+        }
+
+        public function loadMorePhotosByUser(Request $request) {
+            $data_user = User::FirstWhere('uuid', $request->get('uuid'));
+            $photos = Photo::where('status_active', '1')->where('user_id', $data_user->id)->paginate(15, ['*'], 'page', $request->get('page'));
+            return response()->json($photos);
         }
 
     // followers page
