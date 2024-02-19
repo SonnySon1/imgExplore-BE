@@ -58,30 +58,30 @@ class DatabaseSeeder extends Seeder
             AlbumSeeder::class
         ]);
 
-        Photo::create([
-            'photo_title' => 'Arabic paintings with modern themes',
-            'photo_description' => 'lukisan memukau dengan gaya modern',
-            'file_location' => '240210094525.jpg',
-            'album_id' => 1,
-            'category_id' => 1,
-            'user_id' => 2,
-            'allow_comments' => '1',
-            'uuid'  => Str::uuid(),
-        ]); 
+        // Photo::create([
+        //     'photo_title' => 'Arabic paintings with modern themes',
+        //     'photo_description' => 'lukisan memukau dengan gaya modern',
+        //     'file_location' => '240210094525.jpg',
+        //     'album_id' => 1,
+        //     'category_id' => 1,
+        //     'user_id' => 2,
+        //     'allow_comments' => '1',
+        //     'uuid'  => Str::uuid(),
+        // ]); 
 
-        Photo::create([
-            'photo_title' => 'Abstract paintings with stunning human objects',
-            'photo_description' => 'abstract painting with a modern theme ',
-            'file_location' => '240210095435.jpg',
-            'album_id' => 1,
-            'category_id' => 1,
-            'user_id' => 1,
-            'allow_comments' => '1',
-            'uuid'  => Str::uuid(),
+        // Photo::create([
+        //     'photo_title' => 'Abstract paintings with stunning human objects',
+        //     'photo_description' => 'abstract painting with a modern theme ',
+        //     'file_location' => '240210095435.jpg',
+        //     'album_id' => 1,
+        //     'category_id' => 1,
+        //     'user_id' => 1,
+        //     'allow_comments' => '1',
+        //     'uuid'  => Str::uuid(),
 
-        ]); 
+        // ]); 
 
-        Photo::factory(120)->create();
+        Photo::factory(30)->create();
 
 
         

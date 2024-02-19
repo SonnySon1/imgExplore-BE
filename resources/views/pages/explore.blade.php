@@ -30,9 +30,8 @@
                     </form>
                     <div class="image-container">
                         <div id="image-wrapper">
-                            @foreach ($photos as $photo)
-                                <a href="/explore/show={{ $photo->uuid }}"><img src="{{ asset('assets/img/img-e/'.$photo->file_location) }}"></a>
-                            @endforeach
+                                {{-- <a href="/explore/show={{ $photo->uuid }}"><img src="{{ asset('assets/img/img-e/'.$photo->file_location) }}"></a> --}}
+                            {{-- @endforeach --}}
                         </div>
                     </div>
                 </div>
