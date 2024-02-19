@@ -38,7 +38,7 @@
                                             @enderror
                                         </div>
                                         <div class="input-distance-add-album">
-                                            <button type="submit">Update album</button>
+                                            <button type="submit">Add album</button>
                                         </div>
                                     </form>
                                 </div>

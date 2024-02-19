@@ -13,118 +13,24 @@
                         </div>
                         <div>
                             <div class="container-user-info">
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/6.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Yaoo</h5>
-                                            <p>Sit amet, consectetur</p>
+                                @foreach ($followings as $following)
+                                    <div class="wrapping-user-info">
+                                        <div class="profile-user-following">
+                                            <img src="{{ asset('assets/img/profile/'.$following->userTo->picture) }}" alt="">
                                         </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/7.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Rayho</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
+                                        <div class="user-identity">
+                                            <div>
+                                                <h5>{{ $following->userTo->name }}</h5>
+                                                <p>{{ Str::limit($following->userTo->bio, 30) }}</p>
+                                            </div>
+                                            <div class="follow-button-container">
+                                                <form action="" method="post">
+                                                    <button><i class="bi bi-person-fill-check"></i> Following</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/8.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Nychole</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/9.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Ryson</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/10.webp') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Nyca</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/11.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Rysn</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapping-user-info">
-                                    <div class="profile-user-following">
-                                        <img src="{{ asset('assets/img/img-p/1.jpg') }}" alt="">
-                                    </div>
-                                    <div class="user-identity">
-                                        <div>
-                                            <h5>Nicolio</h5>
-                                            <p>Sit amet, consectetur</p>
-                                        </div>
-                                        <div class="follow-button-container">
-                                            <form action="" method="post">
-                                                <button><i class="bi bi-person-fill-check"></i> Following</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
