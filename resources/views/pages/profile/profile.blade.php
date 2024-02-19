@@ -37,13 +37,15 @@
                                 </div>
                                 <div class="bio-container">
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        {{ $data_user->bio }}
                                     </p>   
                                 </div>
                                 <div class="ber-container">
                                     <ul>
                                         <li><a href="" class="active-menu">Posts</a></li>
-                                        <li><a href="favorite.html">Favorite</a></li>
+                                        @if ($data_user->uuid == Auth::user()->uuid)
+                                                <li><a href="/profile/favorite">Favorite</a></li>
+                                        @endif
                                         <li><a href="">Email</a></li>
                                         @if ($data_user->uuid !== Auth::user()->uuid)
                                             @if ($data_follow)
