@@ -6,7 +6,7 @@
             <div class="main">
                 <div class="container">
                     <div class="container-hiro-explore">
-                        <img class="hiro-explore" src="assets/img/explore.png">
+                        <img class="hiro-explore" src="{{ asset('assets/img/explore.png') }}">
                     </div>
                     <div class="container-category-explore">
                           <ul class="category-explore">
@@ -29,9 +29,11 @@
                         </div>
                     </form>
                     <div class="image-container">
-                        @foreach ($photos as $photo)
-                            <a href="/explore/show={{ $photo->uuid }}"><img src="{{ asset('assets/img/img-e/'.$photo->file_location) }}"></a>
-                        @endforeach
+                        <div id="image-wrapper">
+                            @foreach ($photos as $photo)
+                                <a href="/explore/show={{ $photo->uuid }}"><img src="{{ asset('assets/img/img-e/'.$photo->file_location) }}"></a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
