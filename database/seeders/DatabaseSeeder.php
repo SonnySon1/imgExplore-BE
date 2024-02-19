@@ -8,6 +8,7 @@ use App\Models\Album;
 use App\Models\User;
 use App\Models\Photo;
 use App\Models\Category;
+use Database\Factories\PhotoFactory;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+
+            
         User::create([
             'username'  => 'soni',
             'password'  => bcrypt(123),
@@ -50,27 +53,9 @@ class DatabaseSeeder extends Seeder
             'uuid'  => Str::uuid(),
         ]); 
 
-        Category::create([
-            'name'  => 'Modern Art',
-            'description' => 'kumpulan modern art'
-        ]); 
-        Category::create([
-            'name'  => 'Traditional Art',
-            'description' => 'kumpulan Traditional art'
-        ]); 
-
-        Album::create([
-            'album_name' => 'My Art',
-            'description' => 'Hanya art tradisional',
-            'user_id' => 1,
-            'uuid' => Str::uuid()
-        ]);
-
-        Album::create([
-            'album_name' => 'Cool Art',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            'user_id' => 2,
-            'uuid' => Str::uuid()
+        $this->call([
+            CategorySeeder::class,
+            AlbumSeeder::class
         ]);
 
         Photo::create([
@@ -95,6 +80,9 @@ class DatabaseSeeder extends Seeder
             'uuid'  => Str::uuid(),
 
         ]); 
+
+        Photo::factory(120)->create();
+
 
         
 

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     //categories page
         public function index(){
-            return view('pages.categories');
+            $categories = Category::paginate(8);
+            return view('pages.categories', compact('categories'));
         }
 
    

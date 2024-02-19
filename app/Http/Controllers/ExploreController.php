@@ -9,7 +9,14 @@ class ExploreController extends Controller
 {
     //explore page
     public function index() {
-        return view('pages.explore');
+        $photos = Photo::where('status_active', '1')->paginate(15);
+        return view('pages.explore', compact('photos'));
+    }
+
+    // load more foto
+    public function loadMorePhotos() {
+        $photos = Photo::paginate(15);
+        return response()->json($photos);
     }
 
     // show page

@@ -6,7 +6,7 @@
             <div class="main">
                 <div class="container">
                     <div class="container-hiro-explore">
-                        <img class="hiro-explore" src="assets/img/explore.png">
+                        <img class="hiro-explore" src="{{ asset('assets/img/explore.png') }}">
                     </div>
                     <div class="container-category-explore">
                           <ul class="category-explore">
@@ -29,22 +29,16 @@
                         </div>
                     </form>
                     <div class="image-container">
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/1.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/2.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/3.webp') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/4.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/5.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/6.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/7.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/8.webp') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/9.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/10.jpg') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/11.webp') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/12.png') }}"></a>
-                        <a href="/explore/show"><img src="{{ asset('assets/img/img-e/13.jpg') }}"></a>
+                        <div id="image-wrapper">
+                            @foreach ($photos as $photo)
+                                <a href="/explore/show={{ $photo->uuid }}"><img src="{{ asset('assets/img/img-e/'.$photo->file_location) }}"></a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
     <!-- //main -->
+
+    <script src="{{ asset('assets/js/explore/explore.js') }}"></script>
  @endsection
