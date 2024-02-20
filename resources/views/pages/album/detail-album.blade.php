@@ -7,9 +7,9 @@
                     <div class="wrapping-elemet">
                         <div class="header-title">
                             <p>Album by <strong>{{ Auth::user()->name }}</strong></p>
-                            <a href="/album">
+                            <button onclick="goBack()" type="button">
                                 <i class="bi bi-x-circle-fill close-button"></i>
-                            </a>
+                            </button>
                         </div>
                         <div>
                             <div class="container-album-info">
@@ -36,7 +36,7 @@
                         <div class="container-album-photo-detail">
                             @foreach ($data_photos as $data_photo)
                                 <div>
-                                    <a href="">
+                                    <a href="/explore/show={{ $data_photo->uuid }}">
                                         <div class="wrapping-album-photos-detail">
                                             <div class="cover-album-foto-detail"> <img src="{{ asset('assets/img/img-e/'.$data_photo->file_location) }}" alt=""></div>
                                         </div>

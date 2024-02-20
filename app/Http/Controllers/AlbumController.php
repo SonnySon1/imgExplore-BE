@@ -29,7 +29,7 @@ class AlbumController extends Controller
                 'album_name'    => ['required', 'unique:albums,album_name'],
                 'description'   => ['required']
             ]);
-
+            
             $cover_file         = $request->file('cover');
             $cover_extention    = $cover_file->extension();
             $cover_name         = date('dmyhis').'.'. $cover_extention;
@@ -75,7 +75,7 @@ class AlbumController extends Controller
                         'cover' => ['mimes:png,jpg, jpeg, gif'],
                     ]);
 
-                    $cover_file = $request->files('cover');
+                    $cover_file = $request->file('cover');
                     $cover_extention = $cover_file->extension();
                     $cover_name = date('dmyhis').'.'.$cover_extention;
                     $cover_file->move(public_path('/assets/img/cover/albums/'), $cover_name);

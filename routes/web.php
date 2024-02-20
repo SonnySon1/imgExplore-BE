@@ -81,8 +81,6 @@ Route::middleware('auth')->group(function(){
     Route::get('/notification/show', [NotificationController::class, 'show']);
 
     Route::post('/follow/user', [FollowController::class, 'store']);
-
-
 });
 
 Route::middleware('admin')->group(function(){

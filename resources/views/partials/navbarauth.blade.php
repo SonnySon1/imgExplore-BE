@@ -6,9 +6,9 @@
         <nav class="navbar">
              <li>
                  <ul>
-                     <li><a href="/explore" class="{{ Request::is('explore') ? 'active' : ' ' }}">Explore</a></li>
-                     <li><a href="/categories" class="{{ Request::is('categories') ? 'active' : ' ' }}">Category</a></li>
-                     <li><a href="/upload" class="{{ Request::is('upload') ? 'active' : ' ' }}">Create </a></li>
+                     <li><a href="/explore" class="{{ Request::is('explore*') ? 'active' : ' ' }}">Explore</a></li>
+                     <li><a href="/categories" class="{{ Request::is('categories*') ? 'active' : ' ' }}">Category</a></li>
+                     <li><a href="/upload" class="{{ Request::is('upload*') ? 'active' : ' ' }}">Create </a></li>
                  </ul>
              </li>
          </nav>
