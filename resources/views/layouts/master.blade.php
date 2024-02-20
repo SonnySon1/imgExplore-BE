@@ -53,10 +53,16 @@
     {{-- //content --}}
         
      <!-- footer -->
-{{-- <footer>
-    <div class="footer-container-ath">
-            <p>© Copyright imgExplore. All Rights Reserved Designed by imgExplore</p>
-    </div>
-</footer> --}}
+    {{-- <footer>
+        <div class="footer-container-ath">
+                <p>© Copyright imgExplore. All Rights Reserved Designed by imgExplore</p>
+        </div>
+    </footer> --}}
+
+    <script>
+        function goBack() {
+            window.history.back()
+        }
+    </script>
 </body>
 </html>

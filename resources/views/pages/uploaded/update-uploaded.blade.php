@@ -7,9 +7,9 @@
                     <div class="wrapping-elemet">
                         <div class="header-title">
                             <p>Upload Image</p>
-                            <a href="/uploaded">
+                            <button onclick="goBack()" type="button">
                                 <i class="bi bi-x-circle-fill close-button"></i>
-                            </a>
+                            </button>
                         </div>
                         <div>
                             <div class="container-upload">
