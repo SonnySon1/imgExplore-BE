@@ -58,10 +58,6 @@ Route::middleware('auth')->group(function(){
     Route::get('/uploaded/edit={photo:uuid}', [UploadedController::class, 'edit']);
     Route::post('/uploaded/update={photo:uuid}', [UploadedController::class, 'update']);
 
-    Route::get('/review', [ReviewAdminController::class, 'index']);
-    Route::get('/review/show={photo:uuid}', [ReviewAdminController::class, 'show']);
-    Route::post('/review/show/store={photo:uuid}', [ReviewAdminController::class, 'store']);
-
     Route::get('/upload', [UploadController::class, 'index']);
     Route::post('/upload/store', [UploadController::class, 'store']);
 
@@ -81,6 +77,18 @@ Route::middleware('auth')->group(function(){
     Route::get('/profile/following={user:uuid}', [ProfileController::class, 'following']);
     Route::get('/load-more-photos-user', [ProfileController::class, 'loadMorePhotosByUser']);
 
+    Route::get('/notification', [NotificationController::class, 'index']);
+    Route::get('/notification/show', [NotificationController::class, 'show']);
+
+    Route::post('/follow/user', [FollowController::class, 'store']);
+
+
+});
+
+Route::middleware('admin')->group(function(){
+    Route::get('/review', [ReviewAdminController::class, 'index']);
+    Route::get('/review/show={photo:uuid}', [ReviewAdminController::class, 'show']);
+    Route::post('/review/show/store={photo:uuid}', [ReviewAdminController::class, 'store']);
 
     Route::get('/admin/category', [CategoryAdminController::class, 'index']);
     Route::get('/admin/category/create', [CategoryAdminController::class, 'create']);
@@ -92,11 +100,4 @@ Route::middleware('auth')->group(function(){
     Route::get('/admin/users', [UsersAdminController::class, 'index']);
     Route::get('/admin/users/edit={user:uuid}', [UsersAdminController::class, 'edit']);
     Route::post('/admin/users/update={user:uuid}', [UsersAdminController::class, 'update']);
-
-    Route::get('/notification', [NotificationController::class, 'index']);
-    Route::get('/notification/show', [NotificationController::class, 'show']);
-
-    Route::post('/follow/user', [FollowController::class, 'store']);
-
-
 });
