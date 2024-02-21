@@ -7,9 +7,9 @@
                     <div class="wrapping-elemet">
                         <div class="header-title">
                             <p>Following by <strong>Virelix</strong></p>
-                            <a href="/profile">
+                            <button onclick="goBack()" type="button">
                                 <i class="bi bi-x-circle-fill close-button"></i>
-                            </a>
+                            </button>
                         </div>
                         <div>
                             <div class="container-user-info">

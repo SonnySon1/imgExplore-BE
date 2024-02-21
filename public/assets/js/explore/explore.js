@@ -15,7 +15,7 @@ function loadPhotos() {
                     });
                     page++; 
                     loading = false;
-                }
+                }   
             }
         });
     }

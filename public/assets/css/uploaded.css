@@ -166,6 +166,11 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     display: flex;
     justify-content: space-between;
 }
+.header-title button{
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
 .close-button{
     font-size: 25px;
     color: #FF5B00;
@@ -191,6 +196,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     padding-left: 10px;
     border-bottom: 1px solid #3E3E3E;
 }
+
 .table-body td{
     padding-top: 3px;
     padding-left: 10px;
