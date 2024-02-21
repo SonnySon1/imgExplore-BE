@@ -9,16 +9,37 @@
                     </div>
                     <div class="bar-fun-conainer">
                         <div>
-                            <i class="bi bi-star"></i>
-                            <p>Add to Favourites</p>
+                             @if ($data_favorite)
+                                <form id="formFavorite">
+                                    @csrf
+                                    <input type="hidden" value="{{ $photo->id }}" name="photo_identifier">
+                                    <p class="bi bi-star-fill" id="btn-favorite"> Add to Favourites</p>
+                                </form>
+                             @else
+                                <form id="formFavorite">
+                                    @csrf
+                                    <input type="hidden" value="{{ $photo->id }}" name="photo_identifier">
+                                    <p class="bi bi-star" id="btn-favorite"> Add to Favourites</p>
+                                </form>
+                             @endif                           
                         </div>
                         <div>
-                            <i class="bi bi-hand-thumbs-up"></i>
-                            <p>280k</p>   
+                            @if ($data_like)
+                                <form id="formLike">
+                                    @csrf
+                                    <input type="hidden" value="{{ $photo->id }}" name="photo_identifier">
+                                    <p class="bi bi-hand-thumbs-up-fill" id="btn-like">{{ $data_like_counter->count() }}</p>
+                                </form>
+                            @else
+                                <form id="formLike">
+                                    @csrf
+                                    <input type="hidden" value="{{ $photo->id }}" name="photo_identifier">
+                                    <p class="bi bi-hand-thumbs-up" id="btn-like">{{ $data_like_counter->count() }}</p>
+                                </form>
+                            @endif
                         </div>
                         <div>
-                            <i class="bi bi-chat-dots"></i>
-                            <p>239k</p>   
+                            <p class="bi bi-chat-dots" id="btn-comment"> 239k</p>
                         </div>
                     </div>
                     <h1 class="img-title-detail">{{ $photo->photo_title }}</h1>
@@ -32,13 +53,30 @@
                                 <div>
                                     <h3 class="username-text-detail">{{ $photo->user->name }} <img src="{{ asset('assets/img/private.png') }}"></h3>
                                     <p>Followers</p>
-                                    <h5>200k</h5>
+                                    <h5>{{ $data_user->followTo->count() }}</h5>
                                 </div>
                             <div>
-                                <form action="">
-                                    <input type="hidden" value="1">
-                                    <button class="btn-follow">Follow</button>
-                                </form>
+                                @if ($photo->user->uuid !== Auth::user()->uuid)
+                                    @if ($data_follow  && $data_follow->to == $photo->user->id)
+                                    <form id="followFormDetail">
+                                        @csrf
+                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                        <button type="button" class="btn-donefollow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Unfollow</span></button>
+                                    </form>
+                                    @else
+                                    <form id="followFormDetail">
+                                        @csrf
+                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                        <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-x-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
+                                    </form>
+                                    @endif
+                                @else
+                                    <form id="followFormDetail" hidden>
+                                        @csrf
+                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                        <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
+                                    </form>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -133,4 +171,5 @@
             </div>
         </main>
     <!-- //main -->
+    <script src="{{ asset('assets/js/img_detail/img_detail.js') }}"></script>
 @endsection

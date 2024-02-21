@@ -10,16 +10,16 @@
                     </div>
                     <div class="container-category-explore">
                           <ul class="category-explore">
-                            <li>For You</li>
-                            <li>Art</li>
-                            <li>Traditional Art</li>
-                            <li>Character Design</li>
-                            <li>Illustrations</li>
-                            <li>Backgrounds</li>
-                            <li>Anime</li>
-                            <li>Cartoons</li>
-                            <li>Photography</li>
-                            <li>Ai Art</li>
+                            <li><button>For You</button></li>
+                            <li><button>Art</button></li>
+                            <li><button>Traditional Art</button></li>
+                            <li><button>Character Design</button></li>
+                            <li><button>Illustrations</button></li>
+                            <li><button>Backgrounds</button></li>
+                            <li><button>Anime</button></li>
+                            <li><button>Cartoons</button></li>
+                            <li><button>Photography</button></li>
+                            <li><button>Ai Art</button> </li>
                         </ul>
                     </div>
                     <form action="" method="post"> 

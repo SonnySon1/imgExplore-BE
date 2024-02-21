@@ -2,7 +2,6 @@
 @section('content')
     <!-- main -->
         <main>
-            <p id="uuid" hidden>{{ $data_user->uuid }}</p>
             <div class="main">
                 <div class="container">
                     <div class="wrapping-elemet-profile">
@@ -17,7 +16,7 @@
                                 <div class="information-menu-container">
                                     <div class="information-menu">
                                         <div>
-                                            <a href="#posts">
+                                            <a href="#posts_user">
                                                 <h3>{{ $data_user->photo->count() }}</h3>
                                                 <p>Posts</p>
                                             </a>
@@ -43,11 +42,11 @@
                                 </div>
                                 <div class="ber-container">
                                     <ul>
-                                        <li><a href="" class="active-menu">Posts</a></li>
+                                        <li><a href="#posts_user" class="active-menu">Posts</a></li>
                                         @if ($data_user->uuid == Auth::user()->uuid)
                                                 <li><a href="/profile/favorite">Favorite</a></li>
                                         @endif
-                                        <li><a href="mailto:sudrajatsoni48@gmail.com">Email</a></li>
+                                        <li><a href="mailto:{{ $data_user->email }}">Email</a></li>
                                         @if ($data_user->uuid !== Auth::user()->uuid)
                                                 @if ($data_follow)
                                                     <form id="followForm">

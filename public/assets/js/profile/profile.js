@@ -68,7 +68,7 @@ function loadPhotosByUser() {
             success: function(response) {
                 if(response.data.length > 0) {
                     response.data.forEach(function(image) {
-                        $('#posts_user').append('<a href="image-detail"><img src="assets/img/img-e/'+ image.file_location + '" alt=""></a>');
+                        $('#posts_user').append('<a href="/explore/show=' + image.uuid + '"><img src="assets/img/img-e/'+ image.file_location + '" alt=""></a>');
                     });
                     page++; 
                     loading = false;

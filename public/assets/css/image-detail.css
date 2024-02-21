@@ -178,9 +178,11 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     display: flex;
     gap: 28px;
 }
+
 .bar-fun-conainer div{
     display: flex;
     gap: 5px;
+    cursor: pointer;
 }
 .img-title-detail{
     margin-top: 16px;
@@ -317,7 +319,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
 .time-comment{
     color: #747474;
 }
-.btn-follow{
+.btn-follow-imgDetail{
     padding: 12px;
     width: 106px;
     background-color: #FF5B00;
@@ -328,8 +330,22 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     transition: all .3s ease-in-out;
     cursor: pointer;
 }
-.btn-follow:hover{
+.btn-follow-imgDetail:hover{
     box-shadow: 0 0 8px #FF5B00;
+}
+.btn-donefollow-imgDetail{
+    padding: 12px;
+    width: 106px;
+    background-color: #20262C;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #20262C;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+.btn-donefollow-imgDetail:hover{
+    border: 1px solid #FF5B00;
 }
 /* //body */
 

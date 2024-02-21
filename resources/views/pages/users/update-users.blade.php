@@ -7,9 +7,9 @@
                     <div class="wrapping-elemet">
                         <div class="header-title">
                             <p>Update Users By<strong> {{ $user->name }}</strong></p>
-                            <a href="/admin/users">
+                            <button onclick="goBack()" type="button">
                                 <i class="bi bi-x-circle-fill close-button"></i>
-                            </a>
+                            </button>
                         </div>
                         <div>
                             <div class="container-update-users">
