@@ -16,21 +16,21 @@ class FavoriteController extends Controller
 
         public function store(Request $request) {
 
-            $photo = $request->input('photo_identifier');
+            $photo = $request->photo_identifier;
 
             $data_favorite = [
                 'photo_id'    => $photo,
                 'user_id'  => Auth::user()->id,
             ];
-            $data_favorite_check = Favorite::Where('user_id', Auth::user()->id)->first();
+            $data_favorite_check = Favorite::where('photo_id', $photo)->where('user_id', Auth::user()->id)->first();
+
             if ($data_favorite_check) {
-                // unfollow
+                // remove favorite
                 $data_favorite_check->delete();
             }
             else{
-                // follow 
+                // add favorite
                 Favorite::create($data_favorite);
-
             }
         }
 }

@@ -21,11 +21,10 @@ buttonFollowImgDetail.addEventListener('click', function(){
 })
 
 // follow function
-var form = $('#followFormDetail')[0];
+var formFollowDetail = $('#followFormDetail')[0];
 $('#button-follow-imgdetail').click(function(){
       
-    var formData = new FormData(form);
-    formData.append('user', $('#data_user').val());
+    var formData = new FormData(formFollowDetail);
 
     $.ajax({
       url:'/follow/user',
@@ -33,12 +32,6 @@ $('#button-follow-imgdetail').click(function(){
       processData: false,
       contentType: false,
       data: formData,
-      
-
-      success: function(response){    
-        // var counterFollow = parseInt($('#counter-follow').text())
-        // $('#counter-follow').text(counterFollow + 1);
-    },
 
       error:function(response){
           console.log('error');
@@ -46,13 +39,14 @@ $('#button-follow-imgdetail').click(function(){
 
     });
 
-  })
+})
 
 
-  // like
+  // favorite
   $('#btn-favorite').on('click', function () {
     if ($('#btn-favorite').hasClass('bi-star')) {
       $('#btn-favorite').removeClass('bi-star').addClass('bi-star-fill')
+      
     }
     else{
       $('#btn-favorite').removeClass('bi-star-fill').addClass('bi-star')
@@ -61,10 +55,10 @@ $('#button-follow-imgdetail').click(function(){
   })
 
 
-  var form = $('#formFavorite')[0];
+  var formFavorite = $('#formFavorite')[0];
   $('#btn-favorite').click(function(){
         
-      var formData = new FormData(form);
+      var formData = new FormData(formFavorite);
 
       $.ajax({
         url:'/profile/favorite/store',
@@ -72,12 +66,45 @@ $('#button-follow-imgdetail').click(function(){
         processData: false,
         contentType: false,
         data: formData,
-        
   
-        success: function(response){    
-          // var counterFollow = parseInt($('#counter-follow').text())
-          // $('#counter-follow').text(counterFollow + 1);
-      },
+        error:function(response){
+            console.log('error');
+        }
+      });
+  
+    })
+
+
+
+
+    
+
+    // like
+    $('#btn-like').on('click', function () {
+      var counterLike = parseInt($('#btn-like').text())
+
+      if ($('#btn-like').hasClass('bi-hand-thumbs-up')) {
+        $('#btn-like').removeClass('bi-hand-thumbs-up').addClass('bi-hand-thumbs-up-fill')
+        $('#btn-like').text(counterLike + 1)
+      }
+      else{
+        $('#btn-like').removeClass('bi-hand-thumbs-up-fill').addClass('bi-hand-thumbs-up')
+        $('#btn-like').text(counterLike - 1)
+      }
+  
+    })
+    
+  var formLike = $('#formLike')[0];
+  $('#btn-like').click(function(){
+        
+      var formData = new FormData(formLike);
+
+      $.ajax({
+        url:'/explore/like/store',
+        method: 'POST',
+        processData: false,
+        contentType: false,
+        data: formData,
   
         error:function(response){
             console.log('error');
@@ -86,3 +113,5 @@ $('#button-follow-imgdetail').click(function(){
       });
   
     })
+
+

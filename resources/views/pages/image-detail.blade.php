@@ -24,7 +24,19 @@
                              @endif                           
                         </div>
                         <div>
-                            <p class="bi bi-hand-thumbs-up" id="btn-like"> 280k</p>
+                            @if ($data_like)
+                                <form id="formLike">
+                                    @csrf
+                                    <input type="hidden" value="{{ $photo->id }}" name="photo_identifier">
+                                    <p class="bi bi-hand-thumbs-up-fill" id="btn-like">{{ $data_like_counter->count() }}</p>
+                                </form>
+                            @else
+                                <form id="formLike">
+                                    @csrf
+                                    <input type="hidden" value="{{ $photo->id }}" name="photo_identifier">
+                                    <p class="bi bi-hand-thumbs-up" id="btn-like">{{ $data_like_counter->count() }}</p>
+                                </form>
+                            @endif
                         </div>
                         <div>
                             <p class="bi bi-chat-dots" id="btn-comment"> 239k</p>
@@ -45,23 +57,23 @@
                                 </div>
                             <div>
                                 @if ($photo->user->uuid !== Auth::user()->uuid)
-                                    @if ($data_follow)
-                                        <form id="followFormDetail">
-                                            @csrf
-                                            <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}" id="user-identifier">
-                                            <button type="button" class="btn-donefollow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Unfollow</span></button>
-                                        </form>
+                                    @if ($data_follow  && $data_follow->to == $photo->user->id)
+                                    <form id="followFormDetail">
+                                        @csrf
+                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                        <button type="button" class="btn-donefollow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Unfollow</span></button>
+                                    </form>
                                     @else
-                                        <form id="followFormDetail">
-                                            @csrf
-                                            <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}" id="user-identifier">
-                                            <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-x-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
-                                        </form>
+                                    <form id="followFormDetail">
+                                        @csrf
+                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                        <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-x-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
+                                    </form>
                                     @endif
                                 @else
                                     <form id="followFormDetail" hidden>
                                         @csrf
-                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}" id="user-identifier">
+                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
                                         <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
                                     </form>
                                 @endif

@@ -11,23 +11,22 @@ class FollowController extends Controller
 {
     //store follow
     public function store(Request $request){
-        $userIdentifier = $request->input('user_identifier');
+        $userIdentifier = $request->user_identifier;
 
         $data_follow = [
             'from'  => Auth::user()->id,
             'to'    => $userIdentifier
         ];
 
-        $data_follow_check = Follow::Where('from', Auth::user()->id)->First();
+        $data_follow_check = Follow::where('from', Auth::user()->id)->where('to', $userIdentifier)->First();
 
-        if ($data_follow_check && $data_follow_check->to !== $userIdentifier) {
+        if ($data_follow_check) {
             // unfollow
             $data_follow_check->delete();
         }
         else{
             // follow 
             Follow::create($data_follow);
-
         }
     }
 }

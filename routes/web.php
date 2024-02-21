@@ -51,6 +51,7 @@ Route::get('/load-more-categories', [CategoryController::class, 'loadMoreCategor
 
 Route::middleware('auth')->group(function(){
     Route::get('/explore/show={photo:uuid}', [ExploreController::class, 'show']);
+    Route::post('/explore/like/store', [ExploreController::class, 'storeLike']);
 
     Route::get('/dashboard', function(){
         return view('pages.dashboard');
