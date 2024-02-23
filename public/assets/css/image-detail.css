@@ -238,7 +238,9 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     display: flex;
     gap: 20px;
 }
-
+.nonacive-input{
+    color: #3d3d3d;
+}
 .input-comment{
     width: 100%;
     padding-left: 5px;
@@ -296,6 +298,9 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     border-radius: 40px;
     top: 0;
     left: 0;
+}
+.comment-rap{
+    margin-bottom: 100px;
 }
 .comment-card-nody{
     display: flex;

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Album;
+use App\Models\Comment;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -62,4 +63,9 @@ class User extends Authenticatable
     public function followFrom(){
         return $this->hasMany(Follow::class, 'from', 'id');
     } 
+
+    // has many to comment
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
 }

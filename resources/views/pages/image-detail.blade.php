@@ -88,81 +88,45 @@
                     </div>
                     <div class="container-comment">
                         <h2>Comment 239k</h2>
-                        <div class="comment-wrapping">
-                            <div class="comment-body">
-                                <div class="image-comment-container">
-                                    <img class="image-comment" src="{{ asset('assets/img/img-p/2.png') }}" alt="">
-                                </div>
-                                <div class="comment-card-nody">
-                                    <div class="comment-elemet-text">
-                                        <div class="comment-text-head">
-                                            <h4>You</h4>
+                        <div class="comment-rap">
+                            <div class="comment-wrapping">
+                                <div class="comment-body">
+                                    <div class="image-comment-container">
+                                        <img class="image-comment" src="{{ asset('assets/img/img-p/2.png') }}" alt="">
+                                    </div>
+                                    <div class="comment-card-nody">
+                                        <div class="comment-elemet-text">
+                                            <div class="comment-text-head">
+                                                <h4>You</h4>
+                                            </div>
+                                            <p class="comment-text">
+                                                <form id="formComment" autocomplete="off">
+                                                    <div class="input-comment-container">
+                                                        @csrf
+                                                        <input name="photo" type="hidden" value="{{ $photo->id }}">
+                                                        <input name="body_comment" type="text" class="input-comment" id="input-comment" placeholder="Leave a comment..">
+                                                        <button type="button" id="btn-sumbit-comment" class="send-comment-button"><i class="bi bi-send-fill nonacive-input" id="btn-submit-icon"></i></button>
+                                                    </div>
+                                                </form>
+                                            </p>
                                         </div>
-                                        <p class="comment-text">
-                                            <form action="">
-                                                <div class="input-comment-container">
-                                                    <input type="text" class="input-comment" placeholder="Leave a comment..">
-                                                    <button class="send-comment-button"><i class="bi bi-send-fill"></i></button>
+                                    </div>
+                                </div>
+                                <div id="comment-body">
+                                    {{-- <div class="comment-body">
+                                        <div class="image-comment-container">
+                                            <img class="image-comment" src="{{ asset('assets/img/img-p/1.jpg') }}" alt="">
+                                        </div>
+                                        <div class="comment-card-nody">
+                                            <div>
+                                                <div class="comment-text-head">
+                                                    <h4>Senzi</h4>
+                                                    <p class="time-comment">1 minute ago</p>
                                                 </div>
-                                            </form>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-body">
-                                <div class="image-comment-container">
-                                    <img class="image-comment" src="{{ asset('assets/img/img-p/3.jpg') }}" alt="">
-                                </div>
-                                <div class="comment-card-nody">
-                                    <div>
-                                        <div class="comment-text-head">
-                                            <h4>Nincen</h4>
-                                            <p class="time-comment">1 minute ago</p>
+                                                <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. </p>
+                                            </div>
                                         </div>
-                                        <p class="comment-text">Mauris massa. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-body">
-                                <div class="image-comment-container">
-                                    <img class="image-comment" src="{{ asset('assets/img/img-p/1.jpg') }}" alt="">
-                                </div>
-                                <div class="comment-card-nody">
-                                    <div>
-                                        <div class="comment-text-head">
-                                            <h4>Senzi</h4>
-                                            <p class="time-comment">1 minute ago</p>
-                                        </div>
-                                        <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-body">
-                                <div class="image-comment-container">
-                                    <img class="image-comment" src="{{ asset('assets/img/img-p/5.jpg') }}" alt="">
-                                </div>
-                                <div class="comment-card-nody">
-                                    <div>
-                                        <div class="comment-text-head">
-                                            <h4>Younsi</h4>
-                                            <p class="time-comment">1 minute ago</p>
-                                        </div>
-                                        <p class="comment-text">Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.  </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-body">
-                                <div class="image-comment-container">
-                                    <img class="image-comment" src="{{ asset('assets/img/img-p/3.jpg') }}" alt="">
-                                </div>
-                                <div class="comment-card-nody">
-                                    <div>
-                                        <div class="comment-text-head">
-                                            <h4>Rayyns</h4>
-                                            <p class="time-comment">1 minute ago</p>
-                                        </div>
-                                        <p class="comment-text">Mauris massa.</p>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -171,5 +135,8 @@
             </div>
         </main>
     <!-- //main -->
+    <script>
+        window.photo_uuid = "{{ $photo->uuid }}";
+    </script>
     <script src="{{ asset('assets/js/img_detail/img_detail.js') }}"></script>
 @endsection

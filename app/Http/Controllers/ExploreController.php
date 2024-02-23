@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Like;
 use App\Models\User;
 use App\Models\Photo;
@@ -35,6 +36,15 @@ class ExploreController extends Controller
         return view('pages.image-detail', compact('photo', 'data_follow', 'data_user', 'data_favorite', 'data_like', 'data_like_counter'));
     }
 
+    // load more comment
+    public function loadMoreComment(Request $request) {
+        $data_photo = Photo::FirstWhere('uuid',  $request->get('photo'));
+        $comment = Comment::latest()->with('user')->where('photo_id', $data_photo->id)->paginate(15, ['*'], 'page', $request->get('page'));
+        return response()->json($comment);
+    }
+
+
+
     // like
     public function storeLike(Request $request){
         $photo = $request->input('photo_identifier');
@@ -54,5 +64,17 @@ class ExploreController extends Controller
             // like 
             Like::create($data_favorite);
         }
+    }
+
+
+    // comment
+    public function storeComment(Request $request){
+        $data_comment = [
+            'photo_id'   => $request->photo,
+            'user_id'   => Auth::user()->id,
+            'body_comment'  => $request->body_comment
+        ];
+
+        Comment::create($data_comment);
     }
 }
