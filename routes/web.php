@@ -44,6 +44,7 @@ Route::middleware('guest')->group(function(){
 
 Route::get('/explore', [ExploreController::class, 'index']);
 Route::get('/load-more-photos-explore', [ExploreController::class, 'loadMorePhotos']);
+Route::get('/load-more-comment-explore', [ExploreController::class, 'loadMoreComment']);
 
 
 Route::get('/categories', [CategoryController::class, 'index']);
@@ -52,10 +53,13 @@ Route::get('/load-more-categories', [CategoryController::class, 'loadMoreCategor
 Route::middleware('auth')->group(function(){
     Route::get('/explore/show={photo:uuid}', [ExploreController::class, 'show']);
     Route::post('/explore/like/store', [ExploreController::class, 'storeLike']);
+    Route::post('/explore/comment/store', [ExploreController::class, 'storeComment']);
 
     Route::get('/dashboard', function(){
         return view('pages.dashboard');
     });
+
+
 
     Route::get('/uploaded', [UploadedController::class, 'index']);
     Route::get('/uploaded/edit={photo:uuid}', [UploadedController::class, 'edit']);

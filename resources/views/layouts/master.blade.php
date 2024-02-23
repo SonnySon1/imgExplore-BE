@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="{{ asset('assets/css/users.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/update-users.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <!-- Moment Timezone -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+
     <script src="{{ asset('assets/js/jquery/jquery-3.7.1.min.js') }}"></script>
 
 </head>
