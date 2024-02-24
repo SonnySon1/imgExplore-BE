@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Album;
 use App\Models\Comment;
+use App\Models\Notification;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -67,5 +68,13 @@ class User extends Authenticatable
     // has many to comment
     public function comment(){
         return $this->hasMany(Comment::class);
+    }
+
+    // has many to notification
+    public function notificationFrom(){
+        return $this->hasMany(Notification::class, 'form', 'id');
+    }
+    public function notificationTo(){
+        return $this->hasMany(Notification::class, 'to', 'id');
     }
 }

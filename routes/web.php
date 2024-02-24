@@ -86,7 +86,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/load-more-photos-user', [ProfileController::class, 'loadMorePhotosByUser']);
 
     Route::get('/notification', [NotificationController::class, 'index']);
-    Route::get('/notification/show', [NotificationController::class, 'show']);
+    Route::get('/notification/show={notification:uuid}', [NotificationController::class, 'show']);
 
     Route::post('/follow/user', [FollowController::class, 'store']);
 });

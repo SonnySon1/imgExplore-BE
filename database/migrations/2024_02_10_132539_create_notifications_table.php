@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('from')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('to')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->uuid('uuid')->unique();
             $table->text('message');
             $table->timestamps();
         });

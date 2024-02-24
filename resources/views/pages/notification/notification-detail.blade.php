@@ -15,12 +15,12 @@
                             <div class="container-user-info-notification">
                                     <div class="wrapping-user-info-notification">
                                         <div class="profile-user-followers-notification">
-                                            <img src="{{ asset('assets/img/img-p/9.jpg') }}" alt="">
+                                            <img src="{{ asset('assets/img/profile/'.$notification->userFrom->picture) }}" alt="">
                                         </div>
                                         <div class="user-identity-notification">
                                             <div>
-                                                <h5>Nezolio Noelize </h5>
-                                                <p>26/12/2022 02:00</p>
+                                                <h5>{{ $notification->userFrom->name }}</h5>
+                                                <p>{{ $notification->created_at->format('d/m/Y H:s') }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -49,7 +49,7 @@ class AlbumController extends Controller
 
     // page detail
         public function show(Album $album){
-            $data_photos = Photo::where('album_id', $album->id)->get();
+            $data_photos = Photo::where('album_id', $album->id)->paginate(12);
             return view('pages.album.detail-album', compact('data_photos', 'album'));
         }
 
