@@ -11,21 +11,23 @@
                     <div class="container-category-explore">
                           <ul class="category-explore">
                             <li><button>For You</button></li>
-                            <li><button>Art</button></li>
-                            <li><button>Traditional Art</button></li>
+                            @foreach ($categories as $category)
+                                <li><button>{{ $category->name }}</button></li>
+                            @endforeach
+                            {{-- <li><button>Traditional Art</button></li>
                             <li><button>Character Design</button></li>
                             <li><button>Illustrations</button></li>
                             <li><button>Backgrounds</button></li>
                             <li><button>Anime</button></li>
                             <li><button>Cartoons</button></li>
                             <li><button>Photography</button></li>
-                            <li><button>Ai Art</button> </li>
+                            <li><button>Ai Art</button> </li> --}}
                         </ul>
                     </div>
-                    <form action="" method="post"> 
+                    <form id="formSearch"> 
                         <div>
                             <input  class="input-search" type="text" name="search" id="search" placeholder="Search" autocomplete="off">
-                            <button class="btn-search"><i class="bi bi-search"></i></button>
+                            <button id="btn-search" class="btn-search"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
                     <div class="image-container">

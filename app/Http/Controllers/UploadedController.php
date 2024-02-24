@@ -12,7 +12,7 @@ class UploadedController extends Controller
 {
     //uploaded page
     public function index(){
-        $data_uploadeds = Photo::where('user_id', Auth::user()->id)->with('category')->get(); 
+        $data_uploadeds = Photo::where('user_id', Auth::user()->id)->where('status_active', '1')->with('category')->paginate(20); 
         return view('pages.uploaded.uploaded', compact('data_uploadeds'));
     }
     

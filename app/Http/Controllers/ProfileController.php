@@ -20,8 +20,8 @@ class ProfileController extends Controller
             }
 
             $data_follow = Follow::FirstWhere('from', Auth::user()->id);
-
-            return view('pages.profile.profile', compact('data_user', 'data_follow'));
+            $photo_count = Photo::where('status_active', '1')->where('user_id', $data_user->id)->get();
+            return view('pages.profile.profile', compact('data_user', 'data_follow', 'photo_count'));
         }
 
         public function loadMorePhotosByUser(Request $request) {

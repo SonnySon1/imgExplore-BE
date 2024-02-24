@@ -50,6 +50,7 @@
                                 </table>
                             </div>
                         </div>
+                        {{ $data_reviews->links() }}
                     </div>
                 </div>
             </div>
