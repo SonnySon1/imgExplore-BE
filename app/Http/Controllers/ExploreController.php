@@ -32,8 +32,8 @@ class ExploreController extends Controller
         $data_favorite = Favorite::where('photo_id', $photo->id)->where('user_id', Auth::user()->id)->exists();
         $data_like = Like::where('photo_id', $photo->id)->where('user_id', Auth::user()->id)->exists();
         $data_like_counter = Like::where('photo_id', $photo->id)->get();
-
-        return view('pages.image-detail', compact('photo', 'data_follow', 'data_user', 'data_favorite', 'data_like', 'data_like_counter'));
+        $data_count_comment = Comment::where('photo_id', $photo->id)->count();
+        return view('pages.image-detail', compact('photo', 'data_follow', 'data_user', 'data_favorite', 'data_like', 'data_like_counter', 'data_count_comment'));
     }
 
     // load more comment
@@ -41,6 +41,7 @@ class ExploreController extends Controller
         $data_photo = Photo::FirstWhere('uuid',  $request->get('photo'));
         $comment = Comment::latest()->with('user')->where('photo_id', $data_photo->id)->paginate(15, ['*'], 'page', $request->get('page'));
         return response()->json($comment);
+
     }
 
 

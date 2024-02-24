@@ -185,7 +185,7 @@ function loadComment() {
                       const  timestamp = comment.created_at
                       const formattedTime = timeAgo(timestamp);
 
-                        $('#comment-body').append('<div class="comment-body"><div class="image-comment-container"><img class="image-comment" src="/assets/img/profile/'+ comment.user.picture +'" alt=""></div><div class="comment-card-nody"><div><div class="comment-text-head"><h4>Senzi</h4><p class="time-comment">'+ formattedTime +'</p></div><p class="comment-text">'+ comment.body_comment +'</p></div></div></div>');
+                        $('#comment-body').append('<div class="comment-body"><div class="image-comment-container"><img class="image-comment" src="/assets/img/profile/'+ comment.user.picture +'" alt=""></div><div class="comment-card-nody"><div><div class="comment-text-head"><h4>'+ comment.user.name +'</h4><p class="time-comment">'+ formattedTime +'</p></div><p class="comment-text">'+ comment.body_comment +'</p></div></div></div>');
                     });
                     page++; 
                     loading = false;
@@ -204,5 +204,4 @@ $(document).ready(function(){
       }
   });
 })
-
 

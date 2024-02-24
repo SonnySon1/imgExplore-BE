@@ -184,6 +184,13 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     gap: 5px;
     cursor: pointer;
 }
+
+.bar-fun-conainer a{
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+
+}
 .img-title-detail{
     margin-top: 16px;
 }
