@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\Like;
 use App\Models\User;
 use App\Models\Photo;
 use App\Models\Follow;
+use App\Models\Comment;
+use App\Models\Category;
 use App\Models\Favorite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,8 @@ class ExploreController extends Controller
 {
     //explore page
     public function index() {
-        return view('pages.explore');
+        $categories = Category::paginate(10);
+        return view('pages.explore', compact('categories'));
     }
 
     // load more foto

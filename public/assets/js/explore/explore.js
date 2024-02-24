@@ -28,3 +28,32 @@ $(window).on('scroll resize', function() {
         loadPhotos();
     }
 });
+
+
+
+// search
+// $('#btn-search').on('click', function(){
+
+//     var formDataSearch = new FormData(form);
+
+//     $.ajax({
+//         url:'/load-more-photos-explore',
+//         type: 'GET',
+//         data: {
+//             formData,
+//             page
+//         },
+        
+  
+//         success: function(response){    
+//           // var counterFollow = parseInt($('#counter-follow').text())
+//           // $('#counter-follow').text(counterFollow + 1);
+//       },
+  
+//         error:function(response){
+//             console.log('error');
+//         }
+  
+//       });
+
+// })

@@ -12,7 +12,7 @@ class ReviewAdminController extends Controller
 {
     //review page
     public function index(){
-        $data_reviews = Photo::where('status_active', '0')->with('category', 'user')->get();
+        $data_reviews = Photo::where('status_active', '0')->with('category', 'user')->paginate(20);
         return view('pages.review.review', compact('data_reviews'));
     }
 

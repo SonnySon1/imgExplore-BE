@@ -17,7 +17,7 @@
                                     <div class="information-menu">
                                         <div>
                                             <a href="#posts_user">
-                                                <h3>{{ $data_user->photo->count() }}</h3>
+                                                <h3>{{ $photo_count->count() }}</h3>
                                                 <p>Posts</p>
                                             </a>
                                         </div>

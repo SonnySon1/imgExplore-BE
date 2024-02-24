@@ -43,6 +43,7 @@
                                 </table>
                             </div>
                         </div>
+                        {{ $data_uploadeds->links() }}
                     </div>
                 </div>
             </div>
