@@ -39,7 +39,7 @@
                             @endif
                         </div>
                         <div>
-                            <p class="bi bi-chat-dots" id="btn-comment"> 239k</p>
+                            <a href="#comment-body"><p class="bi bi-chat-dots" id="comment-show"> {{ $data_count_comment }}</p></a>
                         </div>
                     </div>
                     <h1 class="img-title-detail">{{ $photo->photo_title }}</h1>
@@ -87,12 +87,12 @@
                         <button class="category-tag">{{ $photo->category->name }}</button>
                     </div>
                     <div class="container-comment">
-                        <h2>Comment 239k</h2>
+                        <h2>Comment {{ $data_count_comment }}</h2>
                         <div class="comment-rap">
                             <div class="comment-wrapping">
                                 <div class="comment-body">
                                     <div class="image-comment-container">
-                                        <img class="image-comment" src="{{ asset('assets/img/img-p/2.png') }}" alt="">
+                                        <img class="image-comment" src="{{ asset('assets/img/profile/'.$photo->user->picture) }}" alt="">
                                     </div>
                                     <div class="comment-card-nody">
                                         <div class="comment-elemet-text">
@@ -113,20 +113,7 @@
                                     </div>
                                 </div>
                                 <div id="comment-body">
-                                    {{-- <div class="comment-body">
-                                        <div class="image-comment-container">
-                                            <img class="image-comment" src="{{ asset('assets/img/img-p/1.jpg') }}" alt="">
-                                        </div>
-                                        <div class="comment-card-nody">
-                                            <div>
-                                                <div class="comment-text-head">
-                                                    <h4>Senzi</h4>
-                                                    <p class="time-comment">1 minute ago</p>
-                                                </div>
-                                                <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. </p>
-                                            </div>
-                                        </div>
-                                    </div> --}}
+                                    
                                 </div>
                             </div>
                         </div>

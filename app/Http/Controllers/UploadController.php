@@ -44,6 +44,6 @@ class UploadController extends Controller
             ];
 
             Photo::create($photo_data);
-            return back()->with('success', 'One photo was successfully sent, please wait for the review results');
+            return back()->with('warning', 'One photo was successfully sent, please wait for the review results');
         }
 }
