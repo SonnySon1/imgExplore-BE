@@ -1,0 +1,23 @@
+/* Sesuaikan gaya paginasi dengan CSS kustom Anda */
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    margin: 20px 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    /* padding: 8px 12px; */
+    text-decoration: none;
+    border: 1px solid transparent;
+    color: #fff;
+
+}
+
+.pagination .active a {
+    color: #fff;
+}

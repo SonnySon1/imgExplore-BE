@@ -48,6 +48,7 @@
                                 </div>    
                             @endforeach
                         </div>
+                        {{ $data_photos->links() }}
                     </div>
                 </div>
             </div>

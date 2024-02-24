@@ -13,57 +13,27 @@
                         </div>
                         <div>
                             <div class="container-user-info">
-                                <a href="/notification/show">
-                                    <div class="wrapping-user-info">
-                                        <div class="profile-user-followers">
-                                            <img src="assets/img/img-p/9.jpg" alt="">
-                                        </div>
-                                        <div class="user-identity">
-                                            <div class="name-massage">
-                                                <h5>Ryson </h5>
-                                                <p>| Menyukai Postingan Anda Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, nobis?</p>
+                                @foreach ($notifications as $notification)
+                                    <a href="/notification/show={{ $notification->uuid }}">
+                                        <div class="wrapping-user-info">
+                                            <div class="profile-user-followers">
+                                                <img src="assets/img/profile/{{ $notification->userFrom->picture }}" alt="">
                                             </div>
-                                            <div class="follow-button-container">
-                                                <p>26/12/2022 02:00</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="/notification/show">
-                                    <div class="wrapping-user-info">
-                                        <div class="profile-user-followers">
-                                            <img src="assets/img/img-p/9.jpg" alt="">
-                                        </div>
-                                        <div class="user-identity">
-                                            <div class="name-massage">
-                                                <h5>Ryson </h5>
-                                                <p>| Menyukai Postingan Anda Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, nobis?</p>
-                                            </div>
-                                            <div class="follow-button-container">
-                                                <p>26/12/2022 02:00</p>
+                                            <div class="user-identity">
+                                                <div class="name-massage">
+                                                    <h5>{{ $notification->userFrom->name }} </h5>
+                                                    <p>| {{ Str::limit($notification->message, 95) }}</p>
+                                                </div>
+                                                <div class="follow-button-container">
+                                                    <p>{{ $notification->created_at->format('d/m/Y H:i') }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                                <a href="/notification/show">
-                                    <div class="wrapping-user-info">
-                                        <div class="profile-user-followers">
-                                            <img src="assets/img/img-p/9.jpg" alt="">
-                                        </div>
-                                        <div class="user-identity">
-                                            <div class="name-massage">
-                                                <h5>Ryson </h5>
-                                                <p>| Menyukai Postingan Anda Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, nobis?</p>
-                                            </div>
-                                            <div class="follow-button-container">
-                                                <p>26/12/2022 02:00</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                               
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
+                        {{ $notifications->links() }}
                     </div>
                 </div>
             </div>

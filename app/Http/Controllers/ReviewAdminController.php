@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notification;
 use App\Models\Photo;
+use Illuminate\Support\Str;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,16 +33,19 @@ class ReviewAdminController extends Controller
         $notification_data = [
             'from'  => Auth::user()->id,
             'to'    => $photo->user->id,
-            'message'   => $request->message
+            'message'   => $request->message,
+            'uuid'   => Str::uuid()
         ];
 
         Notification::create($notification_data);
 
         if ($request->set_status == 1) {
-            return redirect('/review')->with('success', 'photo successfully published');
+            app('flasher')->addWarning('photo successfully published.');
+            return redirect('/review');
         }
         else{
-            return redirect('/review')->with('error', 'photo has been rejected');
+            app('flasher')->addWarning('photo has been rejected.');
+            return redirect('/review');
         }
     }
 }

@@ -44,7 +44,7 @@ class PhotoFactory extends Factory
             'category_id' => mt_rand(1,2),
             'user_id' => mt_rand(1,2),
             'allow_comments' => '1',
-            'status_active' => '1',
+            'status_active' =>  mt_rand(1,2),
             'uuid'  => Str::uuid()
         ];
     }
