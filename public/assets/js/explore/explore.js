@@ -40,16 +40,23 @@ $(window).on('scroll resize', function() {
 //         url:'/load-more-photos-explore',
 //         type: 'GET',
 //         data: {
-//             formData,
+//             formDataSearch,
 //             page
 //         },
-        
-  
-//         success: function(response){    
-//           // var counterFollow = parseInt($('#counter-follow').text())
-//           // $('#counter-follow').text(counterFollow + 1);
-//       },
-  
+//         success: function(response) {
+//             if(response.data.length > 0) {
+                
+//                 $('#image-wrapper').empty();
+
+//                 response.data.forEach(function(image) {
+//                     $('#image-wrapper').append('<a href="/explore/show=' + image.uuid + '"><img src="/assets/img/img-e/' + image.file_location +'"></a>');
+//                 });
+                
+//                 page++; 
+//                 loading = false;
+//             }   
+//         },
+
 //         error:function(response){
 //             console.log('error');
 //         }

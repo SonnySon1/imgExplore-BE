@@ -92,7 +92,7 @@
                             <div class="comment-wrapping">
                                 <div class="comment-body">
                                     <div class="image-comment-container">
-                                        <img class="image-comment" src="{{ asset('assets/img/profile/'.$photo->user->picture) }}" alt="">
+                                        <img class="image-comment" src="{{ asset('assets/img/profile/'.Auth::user()->picture) }}" alt="">
                                     </div>
                                     <div class="comment-card-nody">
                                         <div class="comment-elemet-text">

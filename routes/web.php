@@ -79,6 +79,8 @@ Route::middleware('auth')->group(function(){
 
 
     Route::get('/profile', [ProfileController::class, 'index']);
+    Route::get('/profile/edit={user:uuid}', [ProfileController::class, 'edit']);
+    Route::post('/profile/update={user:uuid}', [ProfileController::class, 'update']);
     Route::get('/profile/favorite', [FavoriteController::class, 'index']);
     Route::post('/profile/favorite/store', [FavoriteController::class, 'store']);
     Route::get('/profile/followers={user:uuid}', [ProfileController::class, 'followers']);
