@@ -2,7 +2,7 @@
 @section('content')
     <!-- main -->
         <main>
-            <div class="main">
+            <div class="main" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="container-hiro-detail">
                         <img class="hiro-detail" src="{{ asset('assets/img/img-e/'.$photo->file_location) }}">

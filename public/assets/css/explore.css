@@ -284,12 +284,5 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
         z-index: 1000;
         background-color: #2D293C;
     }
-    
-    .reload{
-        padding: 15px;
-        background-color: #B901F6;
-        border-radius: 100px;
-        text-align: center;
-    }
     /* //navbar */
 }

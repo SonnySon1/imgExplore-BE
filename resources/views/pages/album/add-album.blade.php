@@ -2,7 +2,7 @@
 @section('content')
     <!-- main -->
         <main>
-            <div class="main">
+            <div class="main" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="wrapping-elemet">
                         <div class="header-title">

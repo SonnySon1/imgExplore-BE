@@ -190,6 +190,9 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     border-radius: 500px;
     filter: blur(160px);
 }
+#content_hiro{
+    height: 705px;
+}
 .container-text-top-home{
     display: flex;
     justify-content: space-between;
@@ -657,7 +660,6 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     .navbar{
         position: fixed;
         bottom: 0;
-        padding: 30px;
         margin-bottom: 5px;
         width: 83%;
         z-index: 1000;

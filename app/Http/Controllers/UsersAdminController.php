@@ -32,6 +32,6 @@ class UsersAdminController extends Controller
         ];
 
         $user->update($data_user_update);
-        return redirect('/admin/users')->with('success', 'One user has successfully updated');
+        return redirect('/admin/users')->with('warning', 'One user has successfully updated');
     }
 }

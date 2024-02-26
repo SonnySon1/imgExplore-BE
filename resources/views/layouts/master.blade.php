@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/paginate.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/update-profile.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    {{-- aos animation --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
@@ -72,5 +75,11 @@
             window.history.back()
         }
     </script>
+
+    {{-- aos animation --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>

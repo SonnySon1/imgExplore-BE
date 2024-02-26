@@ -2,7 +2,7 @@
 @section('content')
     <!-- main -->
         <main>
-            <div class="main">
+            <div class="main" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="wrapping-elemet-profile">
                         <div class="flex-display-center">
@@ -46,7 +46,9 @@
                                         @if ($data_user->uuid == Auth::user()->uuid)
                                                 <li><a href="/profile/favorite">Favorite</a></li>
                                         @endif
-                                        <li><a href="mailto:{{ $data_user->email }}">Email</a></li>
+                                        @if ($data_user->email)
+                                            <li><a href="mailto:{{ $data_user->email }}">Email</a></li>
+                                        @endif
                                         @if ($data_user->uuid !== Auth::user()->uuid)
                                                 @if ($data_follow)
                                                     <form id="followForm">
