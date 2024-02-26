@@ -7,7 +7,7 @@
                     <div class="wrapping-elemet-profile">
                         <div class="flex-display-center">
                             <div>
-                                <h2>&#64;{{ $data_user->username }} <img src="{{ asset('assets/img/private.png') }}" alt=""></h2>
+                                <h2>&#64;{{ $data_user->name }} <img src="{{ asset('assets/img/private.png') }}" alt=""></h2>
                                 <div class="container-image-profile">
                                     <div class="wrapping-image-profile"> 
                                         <img class="image-profile" src="{{ asset('assets/img/profile/'. $data_user->picture ) }}" alt="">
@@ -62,11 +62,12 @@
                                                     </form>
                                                 @endif
                                         @else
-                                            <form id="followForm" hidden>
-                                                @csrf
-                                                <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
-                                                <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
-                                            </form>
+                                        <form id="followForm" hidden>
+                                            @csrf
+                                            <input name="user_identifier" type="hidden" value="{{ $data_user->id }}" id="user-identifier">
+                                            <li><button id="button-follow-profile" type="button" class="follow-menu-profile"><i id="follow-icon" class="bi bi-person-plus-fill"></i></button></li>
+                                        </form>
+                                        <li><a href="/profile/edit={{ $data_user->uuid }}" class="btn-edit-profile"><i class="bi bi-pencil-square"></i></a></li>
                                         @endif
                                     </ul>
                                 </div>
