@@ -22,7 +22,16 @@ class ExploreController extends Controller
 
     // load more foto
     public function loadMorePhotos(Request $request) {
-        $photos = Photo::where('status_active', '1')->paginate(15, ['*'], 'page', $request->get('page'));
+        if ($request->get('category')) {
+            $category = Category::where('name', $request->category)->first();
+            $photos = Photo::where('status_active', '1')->where('category_id', $category->id)->paginate(15, ['*'], 'page', $request->get('page'));
+        }elseif ($request->get('search')) {
+
+            $photos = Photo::where('status_active', '1')->where('photo_title', 'LIKE', '%'.$request->get('search').'%')->paginate(15, ['*'], 'page', $request->get('page'));
+        }
+        else{
+            $photos = Photo::where('status_active', '1')->paginate(15, ['*'], 'page', $request->get('page'));
+        }
         return response()->json($photos);
     }
     
