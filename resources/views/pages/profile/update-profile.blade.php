@@ -2,7 +2,7 @@
 @section('content')
 <!-- main -->
         <main>
-            <div class="main">
+            <div class="main" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="wrapping-elemet">
                         <div class="header-title">
@@ -29,14 +29,23 @@
                                         <div class="input-distance-update-profile">
                                             <label for="name">Name<span>*</span></label>
                                             <input name="name" class="input-form-update-profile" type="text" id="name" value="{{ $user->name }}">
+                                            @error('name')
+                                                <small>{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="input-distance-update-profile">
                                             <label for="email">Email<span>*</span></label>
                                             <input name="email" class="input-form-update-profile" type="text" id="email" value="{{ $user->email }}">
+                                            @error('email')
+                                                <small>{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="input-distance-update-profile">
-                                            <label for="bio">Bio</label>
+                                            <label for="bio">Bio<span>*</span></label>
                                             <input name="bio" class="input-form-update-profile" type="text" id="bio" value="{{ $user->bio }}">
+                                            @error('bio')
+                                                <small>{{ $message }}</small>
+                                            @enderror
                                         </div>
                                         <div class="input-distance-update-profile">
                                             <button type="submit">Update</button>

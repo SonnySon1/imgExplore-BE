@@ -6,6 +6,8 @@
     <title>imgExplore</title>
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    {{-- aos animation --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
      <!-- header -->
@@ -44,15 +46,15 @@
                 <section class="container" id="content_hiro">
                      <div class="main">
                         <div class="container-text-top-home">
-                            <P class="title-home">Show off your work & find your inspiration</P>
-                            <div class="sub-title-home">
+                            <P  data-aos="fade-right" data-aos-duration="1000" class="title-home">Show off your work & find your inspiration</P>
+                            <div data-aos="fade-left" data-aos-duration="1000" class="sub-title-home">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas facere non quasi consequuntur laboriosam, alias accusamus, quia unde nobis </p>
                                 <a href="">Explore Now</a>
                             </div>
                         </div>
                         <div class="container-tr-element-home">
                             <div>
-                                <div class="container-text-memrev">
+                                <div data-aos="fade-right" data-aos-duration="1000" class="container-text-memrev">
                                     <div>
                                         <p class="point">3k</p>
                                         <p>Members</p>
@@ -63,7 +65,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="container-creator-information">
+                                    <div data-aos="fade-up" data-aos-duration="1000" class="container-creator-information">
                                         <div class="container-img-creator">
                                             <div class="wrapping-img-creator"><img src="assets/img/img-p/13.jpg" alt=""></div>
                                             <div class="wrapping-img-creator"><img src="assets/img/img-p/5.jpg" alt=""></div>
@@ -76,13 +78,15 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="container-image-hiro-home">
-                                    <div class="wrapping-image-hiro-home"><img class="first-img-child-hiro" src="assets/img/hiro/1.jpg"></div>
-                                    <div class="wrapping-image-hiro-home"><img class="last-img-child-hiro" src="assets/img/hiro/2.jpg"></div>
+                                <div data-aos="zoom-in-up" data-aos-duration="1000">
+                                    <div class="container-image-hiro-home">
+                                        <div class="wrapping-image-hiro-home"><img class="first-img-child-hiro" src="assets/img/hiro/1.jpg"></div>
+                                        <div class="wrapping-image-hiro-home"><img class="last-img-child-hiro" src="assets/img/hiro/2.jpg"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <div class="container-video">
+                                <div class="container-video" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="wrappin-image-video"><div></div><img src="assets/img/hiro/3.jpg" alt=""></div>
                                     Amet, consectetur ipsum
                                     lorem ipsum dolor sit 
@@ -95,12 +99,12 @@
                 <section class="gradient-section-to-r container-sec2">
                     <div class="main">
                         <div class="container wrapping-sec2">
-                            <div class="container-image-sec2">
+                            <div data-aos="fade-up" data-aos-duration="1000" class="container-image-sec2">
                                 <div class="wrapping-image-sec2">
                                     <img src="assets/img/section/2.svg" alt="">
                                 </div>
                             </div>
-                            <div class="container-text-imgsec2">
+                            <div data-aos="fade-left" data-aos-duration="1000" class="container-text-imgsec2">
                                 <div class="wrapping-text-imgsec2">
                                     <h1>Discover the best photography works</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla</p>
@@ -113,14 +117,14 @@
                 <section class="dark-section container-sec3">
                     <div class="main">
                         <div class="container wrapping-sec3">
-                            <div class="container-text-imgsec3">
+                            <div class="container-text-imgsec3" data-aos="fade-right" data-aos-duration="1000" >
                                 <div class="wrapping-text-imgsec3">
                                     <h1>Search ideas you like</h1>
                                     <p>Vestibulum lacinia arcu eget nulla</p>
                                     <a href="" class="btn-explore-sec3">Explore</a>
                                 </div>
                             </div> 
-                            <div class="container-image-sec3">
+                            <div class="container-image-sec3" data-aos="fade-up" data-aos-duration="1000" >
                                 <div class="wrapping-image-sec3">
                                     <img src="assets/img/section/3.svg" alt="">
                                 </div>
@@ -185,5 +189,11 @@
                     <p>© Copyright imgExplore. All Rights Reserved Designed by imgExplore</p>
                 </div>
         </footer>
+
+        {{-- Aos animation --}}
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+          </script>
 </body>
 </html>

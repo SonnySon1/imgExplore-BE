@@ -6,11 +6,13 @@
     <title>imgExplore</title>
     <link rel="stylesheet" href="{{ asset('assets/css/signup.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      {{-- aos animation --}}
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="signup-body">
     <!-- main -->
         <main>
-            <div class="main">
+            <div class="main" data-aos="zoom-in-up" data-aos-duration="1000">
                 <div class="container">
                     <div class="signup-container">
                         <div class="wrapping-signup">
@@ -66,6 +68,10 @@
             </div>
         </main>
     <!-- //main -->
-    
+    {{-- Aos animation --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>

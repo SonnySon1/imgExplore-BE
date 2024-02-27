@@ -9,7 +9,7 @@
                     </div>
                     <div class="container-categories">
                         @foreach ($categories as $category)
-                            <a href="explore.html">
+                            <a id="category-link" href="/explore?category={{ $category->name }}">
                                 <div class="child-container-categories">
                                     <img class="image-categories" src="{{ asset('assets/img/cover/categories/'.$category->cover) }}" alt="">
                                     <p class="description-categories">{{ $category->name }}</p>

@@ -38,7 +38,7 @@ class CategoryAdminController extends Controller
         ];
 
         Category::create($data_category);
-        return redirect('/admin/category')->with('success', 'category has been successfully created');
+        return redirect('/admin/category')->with('warning', 'category has been successfully created');
     }
     
     // page  edit
@@ -74,7 +74,7 @@ class CategoryAdminController extends Controller
 
         $category->update($data_category_update);
 
-        return redirect('/admin/category')->with('success', 'one category was successfully updated');
+        return redirect('/admin/category')->with('warning', 'one category was successfully updated');
 
     }
 
@@ -83,6 +83,6 @@ class CategoryAdminController extends Controller
     public function destroy(Category $category){
         File::delete(public_path('/assets/img/cover/categories/'.$category->cover));
         $category->delete();
-        return back()->with('success', 'one category has been successfully deleted');
+        return back()->with('warning', 'one category has been successfully deleted');
     }
 }

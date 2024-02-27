@@ -75,7 +75,7 @@ class ProfileController extends Controller
             
 
             $user->update($data_user);
-            return redirect('/profile');
+            return redirect('/profile')->with('warning', 'profile updated successfully');
         }
 
     // followers page
