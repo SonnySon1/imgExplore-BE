@@ -18,7 +18,7 @@
                     </div>
                     <form id="formSearch"> 
                         <div>
-                            <input  class="input-search" type="text" name="search" id="search" placeholder="Search" autocomplete="off">
+                            <input  class="input-search" type="text" name="search" id="search" placeholder="Search" autocomplete="off" value="{{ request('search') }}">
                             <button id="btn-search" class="btn-search"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
