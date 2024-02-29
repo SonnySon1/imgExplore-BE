@@ -44,7 +44,7 @@
                     </div>
                     <h1 class="img-title-detail">{{ $photo->photo_title }}</h1>
                     <div class="profile-container">
-                        <a href="profile.html">
+                        <a href="/profile?show={{ $photo->user->uuid }}">
                         <div class="img-profile-container">
                             <img class="profile-image-detail" src="{{ asset('assets/img/profile/'.$photo->user->picture ) }}">
                         </div>
@@ -58,18 +58,18 @@
                             <div>
                                 @if ($photo->user->uuid !== Auth::user()->uuid)
                                     @if ($data_follow  && $data_follow->to == $photo->user->id)
-                                    <form id="followFormDetail">
-                                        @csrf
-                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
-                                        <button type="button" class="btn-donefollow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Unfollow</span></button>
-                                    </form>
+                                        <form id="followFormDetail">
+                                            @csrf
+                                            <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                            <button type="button" class="btn-donefollow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-x-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Unfollow</span></button>
+                                        </form>
                                     @else
-                                    <form id="followFormDetail">
-                                        @csrf
-                                        <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
-                                        <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-x-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
-                                    </form>
-                                    @endif
+                                        <form id="followFormDetail">
+                                            @csrf
+                                            <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
+                                            <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
+                                        </form>
+                                        @endif
                                 @else
                                     <form id="followFormDetail" hidden>
                                         @csrf
@@ -100,14 +100,25 @@
                                                 <h4>You</h4>
                                             </div>
                                             <p class="comment-text">
-                                                <form id="formComment" autocomplete="off">
-                                                    <div class="input-comment-container">
-                                                        @csrf
-                                                        <input name="photo" type="hidden" value="{{ $photo->id }}">
-                                                        <input name="body_comment" type="text" class="input-comment" id="input-comment" placeholder="Leave a comment..">
-                                                        <button type="button" id="btn-sumbit-comment" class="send-comment-button"><i class="bi bi-send-fill nonacive-input" id="btn-submit-icon"></i></button>
-                                                    </div>
-                                                </form>
+                                                @if ($photo->allow_comments == 1)    
+                                                    <form id="formComment" autocomplete="off">
+                                                        <div class="input-comment-container">
+                                                            @csrf
+                                                            <input name="photo" type="hidden" value="{{ $photo->id }}">
+                                                            <input name="body_comment" type="text" class="input-comment" id="input-comment" placeholder="Leave a comment..">
+                                                            <button type="button" id="btn-sumbit-comment" class="send-comment-button"><i class="bi bi-send-fill nonacive-input" id="btn-submit-icon"></i></button>
+                                                        </div>
+                                                    </form>
+                                                @else
+                                                    <form id="formComment" autocomplete="off" >
+                                                        <div class="input-comment-container">
+                                                            @csrf
+                                                            <input disabled readonly  name="photo" type="hidden" value="{{ $photo->id }}">
+                                                            <input  disabled readonly  name="body_comment" type="text" class="input-comment" id="input-comment" placeholder="Comments are disabled">
+                                                            <button  disabled readonly type="button" id="btn-sumbit-comment" class="send-comment-button"><i class="bi bi-ban"></i></button>
+                                                        </div>
+                                                    </form>
+                                                @endif
                                             </p>
                                         </div>
                                     </div>

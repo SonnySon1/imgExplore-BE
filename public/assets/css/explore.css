@@ -200,26 +200,36 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
 .category-explore{
     display: flex;
     gap: 20px;
+    padding-bottom: 30px;
     overflow-y: hidden;
     justify-content: space-between;
 }
-.category-explore > li > button{
+.category-explore a{
+    text-decoration: none;
+    color: white;
+}
+.category-explore li{
+    position: relative;
+    top: 13px;
+}
+.category-explore  li  a{
     background-color: #20262C;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 20px; 
     border-radius: 10px;
     white-space: nowrap;
-    color: white;
     border: 1px solid transparent;
     transition: all .3s ease-in-out;
 }
-.category-explore > li > button:hover{
+.category-explore  li  a:hover{
     border: 1px solid #FF5B00;
+}
+.category-active{
+    border: 1px solid #FF5B00 !important;
 }
 .input-search{
     padding: 10px;
     width: 33%;
+    padding-right: 40px;
     background-color: transparent;
     border: 1px solid #FF5B00;
     border-radius: 10px;

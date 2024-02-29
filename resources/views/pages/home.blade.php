@@ -146,14 +146,21 @@
                                         <p>Search for various works</p>
                                     </div>
                                     <div class="container-register-input">
-                                        <form action="">
+                                        <form action="/signup" method="POST">
+                                            @csrf
                                             <div class="input-register-distance">
-                                                <label for="">Email</label>
-                                                <input type="text">
+                                                <label for="">Username</label>
+                                                <input name="username" type="text">
+                                                @error('username')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
                                             </div>
                                             <div class="input-register-distance">
                                                 <label for="">Password</label>
-                                                <input type="password">
+                                                <input name="password" type="password">
+                                                @error('password')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
                                             </div>
                                             <div class="input-register-distance btn-continue">
                                                 <button>Continue</button>

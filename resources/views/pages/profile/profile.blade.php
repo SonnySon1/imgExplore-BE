@@ -49,6 +49,7 @@
                                         @if ($data_user->email)
                                             <li><a href="mailto:{{ $data_user->email }}">Email</a></li>
                                         @endif
+                                        <li><a href="/album?show={{ $data_user->uuid }}">Albums</a></li>
                                         @if ($data_user->uuid !== Auth::user()->uuid)
                                                 @if ($data_follow)
                                                     <form id="followForm">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Album;
 use App\Models\Photo;
 use Illuminate\Support\Str;
@@ -12,8 +13,13 @@ use Illuminate\Support\Facades\File;
 class AlbumController extends Controller
 {
     //page album
-        public function index() {
-            $data_albums = Album::where('user_id', Auth::user()->id)->get();
+        public function index(Request $request) {
+            if($request->show){
+                $data_user = User::FirstWhere('uuid', $request->show);
+                $data_albums = Album::where('user_id', $data_user->id)->get();
+            }else{
+                $data_albums = Album::where('user_id', Auth::user()->id)->get();
+            }
             return view('pages.album.album', compact('data_albums'));
         }
 
