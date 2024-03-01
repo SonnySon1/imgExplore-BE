@@ -51,7 +51,7 @@
                                         </div>
                                     </div>
                                     <div class="container-signup-with-google">
-                                        <a href="" class="btn-signup-with-google">Google</a>
+                                        <a href="/auth/google" class="btn-signup-with-google">Google</a>
                                     </div>
                                     <div class="text-bottom-signup">
                                         <p>Do you already have an account? <a href="/signin">Sign in</a> here</p>

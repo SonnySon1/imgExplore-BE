@@ -34,11 +34,19 @@
                                             @enderror
                                         </div>
                                         <div class="input-distance-update-profile">
-                                            <label for="email">Email<span>*</span></label>
-                                            <input name="email" class="input-form-update-profile" type="text" id="email" value="{{ $user->email }}">
-                                            @error('email')
-                                                <small>{{ $message }}</small>
-                                            @enderror
+                                            @if ($user->is_google_user == "1")
+                                                <label for="email">Email<span>*</span> <i>cannot be changed</i></label>
+                                                <input name="email" readonly class="input-form-update-profile" type="text" id="email" value="{{ $user->email }}">
+                                                @error('email')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            @else
+                                                <label for="email">Email<span>*</span></label>
+                                                <input name="email" class="input-form-update-profile" type="text" id="email" value="{{ $user->email }}">
+                                                @error('email')
+                                                    <small>{{ $message }}</small>
+                                                @enderror
+                                            @endif
                                         </div>
                                         <div class="input-distance-update-profile">
                                             <label for="bio">Bio<span>*</span></label>

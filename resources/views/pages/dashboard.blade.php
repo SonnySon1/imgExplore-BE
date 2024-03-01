@@ -13,7 +13,7 @@
                                 <a href="profile/favorite"><i class="bi bi-star-fill"></i> Favorite</a>
                                 <a href="/album"><i class="bi bi-images"></i> Album</a>
                                 @can('admin')
-                                    <a href="/review"><i class="bi bi-eye-fill"></i> Reviw</a>
+                                    <a href="/review"><i class="bi bi-eye-fill"></i> Review</a>
                                     <a href="/admin/category"><i class="bi bi-layers-fill"></i> Categories</a>
                                     <a href="/admin/users"><i class="bi bi-people-fill"></i> Users</a>
                                 @endcan

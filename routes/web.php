@@ -3,6 +3,8 @@
 use App\Models\Favorite;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\FollowController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\SigninController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\UploadController;
@@ -16,7 +18,6 @@ use App\Http\Controllers\UsersAdminController;
 use App\Http\Controllers\ReviewAdminController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\CategoryAdminController;
-use App\Http\Controllers\FollowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,9 @@ Route::middleware('guest')->group(function(){
     Route::get('/signin', [SigninController::class, 'index'])->name('login');
     Route::post('/signin', [SigninController::class, 'store']);
     
+    Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle']);
+    Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
     Route::get('/', function () {
         return view('pages.home');
     });

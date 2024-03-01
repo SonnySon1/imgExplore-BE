@@ -171,7 +171,7 @@
                                             <p style="display: flex;">OR</p>
                                         </div>
                                         <div>
-                                            <a href="" class="google-btn-register">
+                                            <a href="/auth/google" class="google-btn-register">
                                              <div class="wrapping-btn-google">
                                                     Google
                                                 </div>
