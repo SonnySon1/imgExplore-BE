@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <div class="container-signin-with-google">
-                                        <a href="" class="btn-signin-with-google">Google</a>
+                                        <a href="/auth/google" class="btn-signin-with-google">Google</a>
                                     </div>
                                     <div class="text-bottom-signin">
                                         <p>Don't you have an account?<a href="/signup">Sign Up</a> here </p>
