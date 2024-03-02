@@ -161,6 +161,20 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
         border-radius: 40px;
         margin-bottom: 30px;
 }
+.dashboad-container{
+    overflow-x: scroll;
+    display: flex;
+    gap: 20px;  
+}
+.button-slide{
+    width: 30%;
+}
+.chart-dashboard{
+    width: 100%;
+}
+.button-slide a:first-child{
+    background-color: #FF5B00;
+}
 .button-slide a{
     display: block;
     background-color: #0C4698;
@@ -168,14 +182,16 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     margin-bottom: 13px;
     font-weight: bold;
     color: white;
-    border-radius: 10px;
+    border-radius: 2px;
     text-decoration: none;
     transition: all .3s ease-in-out;
 }
 .button-slide a:hover{
     background-color: #FF5B00;
 }
-
+.uploadChart{
+    width: 100%;
+}
 
 
 
@@ -194,4 +210,15 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
         background-color: #2D293C;
     }
     /* //navbar */
+
+    /* body */
+    .button-slide{
+        width: 100%;
+
+    }
+    .dashboad-container{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    /* //body */
 }

@@ -18,6 +18,7 @@ use App\Http\Controllers\UsersAdminController;
 use App\Http\Controllers\ReviewAdminController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\CategoryAdminController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,9 +60,7 @@ Route::middleware('auth')->group(function(){
     Route::post('/explore/like/store', [ExploreController::class, 'storeLike']);
     Route::post('/explore/comment/store', [ExploreController::class, 'storeComment']);
 
-    Route::get('/dashboard', function(){
-        return view('pages.dashboard');
-    });
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
 
 

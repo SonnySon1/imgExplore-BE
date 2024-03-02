@@ -15,26 +15,25 @@ class SigninController extends Controller
 
     // sign in store
     public function store(Request $request){
-        // validate data
             $credentials = $request->validate([
                 'username' => ['required'],
                 'password' => ['required']
             ]);
 
-        // signin data check
-        
-        $user_data = User::Firstwhere('username', $request->username);
-        
-        // if ($user_data->status_active == 0) {
-        //     return back()->with('error', 'the account is banned');
-        // }
+        $data_user = User::Firstwhere('username', $request->username);
         
         if (Auth::attempt($credentials)) {    
-            $request->session()->regenerate();
-            return redirect()->intended('/explore');
+            if ($data_user->status_active == 0) {
+                request()->session()->invalidate();
+                request()->session()->regenerateToken();
+                return back()->with('error_login', 'This user has been banned');
+            }else{
+                $request->session()->regenerate();
+                return redirect()->intended('/explore');
+            }
         }
         else{
-            return back()->with('error', 'Incorrect Username / Password');
+            return back()->with('error_login', 'Incorrect Username / Password');
         }
     }
 

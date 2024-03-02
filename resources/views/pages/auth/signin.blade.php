@@ -43,8 +43,8 @@
                                                     <small>{{ $message }}</small>
                                                 @enderror
                                                 <br>
-                                                @if (session('error'))
-                                                    <small>{{ session('error') }}</small>
+                                                @if (session('error_login'))
+                                                    <small>{{ session('error_login') }}</small>
                                                 @endif
                                             </div>
                                             <div class="input-distance-signin">
