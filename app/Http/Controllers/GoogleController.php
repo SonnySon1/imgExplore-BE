@@ -22,6 +22,11 @@ class GoogleController extends Controller
             $findUser =  User::where('email', $user->getEmail())->first();
 
             if ($findUser) {
+                if ($findUser->status_active == 0) {
+                    request()->session()->invalidate();
+                    request()->session()->regenerateToken();
+                    return redirect('/signin')->with('error_login', 'This user has been banned');
+                }
                 Auth::login($findUser);
                 return redirect()->intended('/explore');
             }else {

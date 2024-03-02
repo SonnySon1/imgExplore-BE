@@ -20,7 +20,7 @@ class ProfileController extends Controller
                 $data_user = User::FirstWhere('uuid', Auth::user()->uuid);
             }
 
-            $data_follow = Follow::FirstWhere('from', Auth::user()->id);
+            $data_follow = Follow::where('from', Auth::user()->id)->where('to', $data_user->id)->first();
             $photo_count = Photo::where('status_active', '1')->where('user_id', $data_user->id)->get();
             return view('pages.profile.profile', compact('data_user', 'data_follow', 'photo_count'));
         }
