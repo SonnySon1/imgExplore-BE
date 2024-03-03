@@ -18,9 +18,10 @@ class AlbumController extends Controller
                 $data_user = User::FirstWhere('uuid', $request->show);
                 $data_albums = Album::where('user_id', $data_user->id)->get();
             }else{
-                $data_albums = Album::where('user_id', Auth::user()->id)->get();
+                $data_user = User::FirstWhere('uuid', Auth::user()->uuid);
+                $data_albums = Album::where('user_id', $data_user->id)->get();
             }
-            return view('pages.album.album', compact('data_albums'));
+            return view('pages.album.album', compact('data_albums', 'data_user'));
         }
 
     // page album create
@@ -56,7 +57,8 @@ class AlbumController extends Controller
     // page detail
         public function show(Album $album){
             $data_photos = Photo::where('album_id', $album->id)->paginate(12);
-            return view('pages.album.detail-album', compact('data_photos', 'album'));
+            $data_user = User::FirstWhere('id', $album->user_id);
+            return view('pages.album.detail-album', compact('data_photos', 'album', 'data_user'));
         }
 
     // page album edit

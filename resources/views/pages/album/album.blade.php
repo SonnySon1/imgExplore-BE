@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="wrapping-elemet">
                         <div class="header-title">
-                            <p>Album by <strong>{{ Auth::user()->name }}</strong></p>
+                            <p>Album by <strong>{{ $data_user->name }}</strong></p>
                             <button onclick="goBack()" type="button">
                                 <i class="bi bi-x-circle-fill close-button"></i>
                             </button>
