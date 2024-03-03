@@ -9,7 +9,7 @@
                      <li><a href="/" class="{{ Request::is('home') ? 'active' : '' }}">Home</a></li>
                      <li><a href="explore" class="{{ Request::is('explore') ? 'active' : '' }}">Explore</a></li>
                      <li><a href="categories" class="{{ Request::is('categories') ? 'active' : '' }}">Category</a></li>
-                     <li><a href="" class="{{ Request::is('home') ? 'active' : '' }}">About </a></li>
+                     <li><a href="about" class="{{ Request::is('about') ? 'active' : '' }}">About </a></li>
                  </ul>
              </li>
          </nav>

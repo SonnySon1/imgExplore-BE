@@ -21,7 +21,7 @@
                          <li><a href="" class="active">Home</a></li>
                          <li><a href="/explore">Explore</a></li>
                          <li><a href="/categories">Category</a></li>
-                         <li><a href="">About </a></li>
+                         <li><a  href="/about">About </a></li>
                      </ul>
                  </li>
              </nav>
