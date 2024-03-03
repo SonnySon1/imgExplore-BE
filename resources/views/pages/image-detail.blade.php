@@ -69,7 +69,7 @@
                                             <input name="user_identifier" type="hidden" value="{{ $photo->user->id }}">
                                             <button type="button" class="btn-follow-imgDetail" id="button-follow-imgdetail"><i class='bi bi-person-plus-fill' id="icon-follow-img-detail"></i> <span id="follow-text-imgdetail">Follow</span></button>
                                         </form>
-                                        @endif
+                                    @endif
                                 @else
                                     <form id="followFormDetail" hidden>
                                         @csrf

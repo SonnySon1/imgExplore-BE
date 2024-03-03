@@ -81,12 +81,14 @@ class ProfileController extends Controller
     // followers page
         public function followers(User $user){
             $followers = Follow::where('to', $user->id)->get();
-            return view('pages.profile.followers', compact('followers', 'user'));
+            $followingUsers = Follow::where('from', Auth::user()->id)->pluck('to')->toArray();
+            return view('pages.profile.followers', compact('followers', 'user', 'followingUsers'));
         }
 
     // following page
         public function following(User $user){
             $followings = Follow::where('from', $user->id)->get();
-            return view('pages.profile.following', compact('followings', 'user'));
+            $followingUsers = Follow::where('from', Auth::user()->id)->pluck('to')->toArray(); 
+            return view('pages.profile.following', compact('followings', 'user', 'followingUsers'));
         }
 }

@@ -228,7 +228,7 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     text-overflow: ellipsis;
     margin: 0;
 }
-.follow-button-container button{
+.btn-unfollow-following {
     padding: 12px;
     border-radius: 10px;
     cursor: pointer;
@@ -240,12 +240,23 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     display: flex;
     gap: 5px;
 }   
-.follow-button-container button:hover{
-    background-color: #1a1f24;
+.btn-unfolow-following:hover{
     color: white;
     border: 1px solid #FF5B00;
 }
-
+.btn-follow-following {
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #FF5B00;
+    border: none;
+    border: 1px solid transparent;
+    color: rgb(186, 186, 186);
+    transition: all .3s ease-in-out;
+    display: flex;
+    gap: 5px;
+    color: white;
+}   
 
 /* //body */
 
