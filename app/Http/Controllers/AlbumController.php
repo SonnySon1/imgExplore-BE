@@ -51,7 +51,7 @@ class AlbumController extends Controller
             ];
             
             Album::create($data_album_store);
-            return redirect('/album')->with('success', 'successfully added a new album');
+            return redirect('/album')->with('warning', 'successfully added a new album');
         }
 
     // page detail
@@ -93,7 +93,7 @@ class AlbumController extends Controller
                 }
 
                 $album->update($data_album_update);
-                return redirect('/album')->with('success', 'successfully updated one album');
+                return redirect('/album')->with('warning', 'successfully updated one album');
         }
 
 }
