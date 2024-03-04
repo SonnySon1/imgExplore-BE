@@ -14,13 +14,14 @@ class AlbumController extends Controller
 {
     //page album
         public function index(Request $request) {
-            if($request->show){
-                $data_user = User::FirstWhere('uuid', $request->show);
-                $data_albums = Album::where('user_id', $data_user->id)->get();
-            }else{
-                $data_user = User::FirstWhere('uuid', Auth::user()->uuid);
-                $data_albums = Album::where('user_id', $data_user->id)->get();
+            $data_user = User::firstWhere('uuid', $request->input('show', Auth::user()->uuid));
+            $data_albums = Album::where('user_id', $data_user->id);
+
+            if ($request->has('search')) {
+                $data_albums->where('album_name', 'LIKE', '%'. $request->search .'%');
             }
+
+            $data_albums = $data_albums->get();
             return view('pages.album.album', compact('data_albums', 'data_user'));
         }
 
@@ -55,8 +56,14 @@ class AlbumController extends Controller
         }
 
     // page detail
-        public function show(Album $album){
-            $data_photos = Photo::where('album_id', $album->id)->paginate(12);
+        public function show(Request $request, Album $album){
+            $data_photos = Photo::where('album_id', $album->id);
+
+            if ($request->has('search')) {
+                $data_photos->where('photo_title', $request->search);
+            }
+
+            $data_photos = $data_photos->paginate(12);
             $data_user = User::FirstWhere('id', $album->user_id);
             return view('pages.album.detail-album', compact('data_photos', 'album', 'data_user'));
         }
