@@ -150,6 +150,13 @@ $('#btn-sumbit-comment').click(function() {
           success: function(response) {
               $('#input-comment').val("");
               $('#input-comment').attr("placeholder", $('#input-comment').attr('placeholder'));
+              
+              // Tambahkan komentar baru ke halaman
+              const comment = response.comment;
+              const timestamp = comment.created_at;
+              const formattedTime = timeAgo(timestamp);
+
+              $('#comment-body').prepend('<div class="comment-body"><div class="image-comment-container"><img class="image-comment" src="/assets/img/profile/' + comment.user.picture + '" alt=""></div><div class="comment-card-nody"><div><div class="comment-text-head"><h4>' + comment.user.name + '</h4><p class="time-comment">' + formattedTime + '</p></div><p class="comment-text">' + comment.body_comment + '</p></div></div></div>');
           },
           error: function(response) {
               console.log('error');
@@ -179,20 +186,21 @@ function loadComment() {
               'page' : page,
               'photo' : photo_uuid
             },
-            success: function(response) {
-                if(response.data.length > 0) {
-                    response.data.forEach(function(comment) {
-                      const  timestamp = comment.created_at
-                      const formattedTime = timeAgo(timestamp);
+          })
+          .done(function(response) {
+              if(response.data.length > 0) {
+                  response.data.forEach(function(comment) {
+                    const  timestamp = comment.created_at
+                    const formattedTime = timeAgo(timestamp);
 
-                        $('#comment-body').append('<div class="comment-body"><div class="image-comment-container"><img class="image-comment" src="/assets/img/profile/'+ comment.user.picture +'" alt=""></div><div class="comment-card-nody"><div><div class="comment-text-head"><h4>'+ comment.user.name +'</h4><p class="time-comment">'+ formattedTime +'</p></div><p class="comment-text">'+ comment.body_comment +'</p></div></div></div>');
-                    });
-                    page++; 
-                    loading = false;
-                    
-                }   
-            }
-        });
+                      $('#comment-body').prepend('<div class="comment-body"><div class="image-comment-container"><img class="image-comment" src="/assets/img/profile/'+ comment.user.picture +'" alt=""></div><div class="comment-card-nody"><div><div class="comment-text-head"><h4>'+ comment.user.name +'</h4><p class="time-comment">'+ formattedTime +'</p></div><p class="comment-text">'+ comment.body_comment +'</p></div></div></div>');
+                  });
+                  page++; 
+                  loading = false;
+                  
+              }   
+          });
+
     }
 }
 

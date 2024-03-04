@@ -88,5 +88,9 @@ class ExploreController extends Controller
         ];
 
         Comment::create($data_comment);
+    
+        $newComment = Comment::with('user')->latest()->first();
+
+        return response()->json(['status' => 'success', 'comment' => $newComment]);
     }
 }
