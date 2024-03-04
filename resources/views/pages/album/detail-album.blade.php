@@ -25,9 +25,9 @@
                             </div>
                         </div>
                         <div class="search-and-plus-album">
-                                <form action="" method="post"> 
+                                <form action="" method=""> 
                                     <div>
-                                        <input  class="input-search-album" type="text" name="search" id="search" placeholder="Search" autocomplete="off">
+                                        <input  class="input-search-album" type="text" name="search" id="search" placeholder="Search" autocomplete="off" value="{{ request('search') }}">
                                         <button class="btn-search-album"><i class="bi bi-search"></i></button>
                                     </div>
                                 </form>
