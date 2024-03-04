@@ -15,7 +15,7 @@
                             <div class="container-album-info">
                                 <div class="container-text-album">
                                     <div class="title-album">Albums</div>
-                                    <div class="sub-title-album">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti.</div>
+                                    <div class="sub-title-album">Albums can store unlimited photos or your best works. Save your entire image collection and enjoy the freedom of saving your best work. Simple, private and unlimited.</div>
                                 </div>
                                 <div class="container-image-album">
                                     <div class="wrapping-image-album"><img src="{{ asset('/assets/img/album/head/1.jpg') }}" alt=""></div>

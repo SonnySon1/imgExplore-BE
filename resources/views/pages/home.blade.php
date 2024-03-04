@@ -14,7 +14,7 @@
      <head>
         <div class="container" id="navbar">
         <ul class="header" id="header">
-            <li class="title">.imgExplore</li>
+            <li class="">.img<strong>Explore</strong></li>
             <nav class="navbar">
                  <li>
                      <ul>
@@ -49,9 +49,9 @@
                             <P  data-aos="fade-right" data-aos-duration="1000" class="title-home">Show off your work & find your inspiration</P>
                             <div data-aos="fade-left" data-aos-duration="1000" class="sub-title-home">
                                 <p>
-                                    Embark on a captivating journey into the world of digital creativity, where your artistic spirit shines. Show the brilliance of your creations and let the world see it. Look for limitless inspiration as you explore the world of self-expression and innovation. Your unique voice, like a melody, resonates through the vast possibilities of digital. Immerse yourself in the transformative power of art, transcend boundaries, and embrace the extraordinary.
+                                    Let's embark on a journey into the world of digital creativity, where your artistic spirit shines. Show your creations and let the world see them. Look for endless inspiration as you explore the world. Immerse yourself in the transformative power of art, transcend boundaries, and embrace the extraordinary.
                                 </p>
-                                <a href="">Explore Now</a>
+                                <a href="/explore">Explore Now</a>
                             </div>
                         </div>
                         <div class="container-tr-element-home">
@@ -90,9 +90,7 @@
                             <div>
                                 <div class="container-video" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="wrappin-image-video"><div></div><img src="assets/img/hiro/3.jpg" alt=""></div>
-                                    Amet, consectetur ipsum
-                                    lorem ipsum dolor sit 
-                                    amet, consectetur ipsum
+                                    Explore various interesting works and create your best work
                                 </div>
                             </div>
                         </div>
@@ -109,8 +107,8 @@
                             <div data-aos="fade-left" data-aos-duration="1000" class="container-text-imgsec2">
                                 <div class="wrapping-text-imgsec2">
                                     <h1>Discover the best photography works</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla</p>
-                                    <a href="" class="btn-explore-sec2">Explore</a>
+                                    <p>Indulge in an endless exploration of the best in photography. Uncover limitless masterpieces and craft your own photographic wonders. Immerse yourself in the world of visual storytelling, where each image narrates a unique tale.</p>
+                                    <a href="/explore" class="btn-explore-sec2">Explore</a>
                                 </div>
                             </div>
                         </div>
@@ -121,9 +119,9 @@
                         <div class="container wrapping-sec3">
                             <div class="container-text-imgsec3" data-aos="fade-right" data-aos-duration="1000" >
                                 <div class="wrapping-text-imgsec3">
-                                    <h1>Search ideas you like</h1>
-                                    <p>Vestibulum lacinia arcu eget nulla</p>
-                                    <a href="" class="btn-explore-sec3">Explore</a>
+                                    <h1>Show your best work</h1>
+                                    <p>Release Your Best Work Now!</p>
+                                    <a href="/explore" class="btn-explore-sec3">Explore</a>
                                 </div>
                             </div> 
                             <div class="container-image-sec3" data-aos="fade-up" data-aos-duration="1000" >
@@ -138,8 +136,8 @@
                     <div class="main">
                         <div class="container wrapping-sec4">
                             <div class="wrapping-text-sec4">
-                                <h1>LOG IN TO START YOUR NEW WORLD</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                                <h1>SIGN UP TO START YOUR NEW WORLD</h1>
+                                <p>Join us . Experience unlimited freedom of expression.</p>
                             </div>
                             <div class="container-register-sec4">
                                 <div class="wrapping-register-sec4">

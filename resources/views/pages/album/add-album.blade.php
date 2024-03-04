@@ -14,7 +14,7 @@
                         <div>
                             <div class="container-add-album">
                                 <div class="form-input-add-album">
-                                    <form action="/album/store" method="post" enctype="multipart/form-data">
+                                    <form action="/album/store" method="post" enctype="multipart/form-data" autocomplete="off">
                                         @csrf
                                         <div class="input-distance-add-album">
                                             <label for="cover">Album Cover<span>*</span></label>
@@ -25,14 +25,14 @@
                                         </div>
                                         <div class="input-distance-add-album">
                                             <label for="album_name">Album Name<span>*</span></label>
-                                            <input name="album_name" class="input-form" type="text" id="album_name">
+                                            <input name="album_name" class="input-form" type="text" id="album_name" value="{{ old('album_name') }}" >
                                             @error('album_name')
                                                 <small>{{ $message }}</small>
                                             @enderror
                                         </div>
                                         <div class="input-distance-add-album">
                                             <label for="description">Album Description<span>*</span></label>
-                                            <input name="description" class="input-form" type="text" id="description">
+                                            <input name="description" class="input-form" type="text" id="description" value="{{ old('description') }}" >
                                             @error('description')
                                                 <small>{{ $message }}</small>
                                             @enderror
