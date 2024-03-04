@@ -60,7 +60,7 @@ class AlbumController extends Controller
             $data_photos = Photo::where('album_id', $album->id);
 
             if ($request->has('search')) {
-                $data_photos->where('photo_title', $request->search);
+                $data_photos->where('photo_title', 'LIKE', '%' . $request->search . '%');
             }
 
             $data_photos = $data_photos->paginate(12);
