@@ -48,7 +48,9 @@
                         <div class="container-text-top-home">
                             <P  data-aos="fade-right" data-aos-duration="1000" class="title-home">Show off your work & find your inspiration</P>
                             <div data-aos="fade-left" data-aos-duration="1000" class="sub-title-home">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas facere non quasi consequuntur laboriosam, alias accusamus, quia unde nobis </p>
+                                <p>
+                                    Embark on a captivating journey into the world of digital creativity, where your artistic spirit shines. Show the brilliance of your creations and let the world see it. Look for limitless inspiration as you explore the world of self-expression and innovation. Your unique voice, like a melody, resonates through the vast possibilities of digital. Immerse yourself in the transformative power of art, transcend boundaries, and embrace the extraordinary.
+                                </p>
                                 <a href="">Explore Now</a>
                             </div>
                         </div>
