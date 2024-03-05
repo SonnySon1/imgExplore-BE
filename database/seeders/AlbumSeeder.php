@@ -18,14 +18,14 @@ class AlbumSeeder extends Seeder
     {
         Album::create([
             'album_name' => 'My Art',
-            'description' => 'Hanya art tradisional',
+            'description' => 'A collection of my art photos',
             'user_id' => 1,
             'uuid' => Str::uuid()
         ]);
 
         Album::create([
             'album_name' => 'Cool Art',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'description' => 'All interesting art',
             'user_id' => 2,
             'uuid' => Str::uuid()
         ]);

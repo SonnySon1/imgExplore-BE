@@ -18,7 +18,7 @@
                                     <a href="/admin/users"><i class="bi bi-people-fill"></i> Users</a>
                                 @endcan
                                 <a href="/profile"><i class="bi bi-person-circle"></i> Profile</a>
-                                <a href="/signout"><i class="bi bi-box-arrow-right"></i> Sign Out</a>
+                                <a href="/signout" onclick="return confirm('are you sure you want to sign out?')"><i class="bi bi-box-arrow-right"></i> Sign Out</a>
                             </div>
                             <div class="chart-dashboard">
                                 <canvas id="uploadChart" width="400" height="200"></canvas>

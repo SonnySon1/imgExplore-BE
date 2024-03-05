@@ -82,6 +82,7 @@ Route::middleware('auth')->group(function(){
     Route::post('/album/store', [AlbumController::class, 'store']);
     Route::get('/album/edit={album:uuid}', [AlbumController::class, 'edit']);
     Route::post('/album/update={album:uuid}', [AlbumController::class, 'update']);
+    Route::get('/album/delete={album:uuid}', [AlbumController::class, 'destroy']);
 
 
     Route::get('/profile', [ProfileController::class, 'index']);

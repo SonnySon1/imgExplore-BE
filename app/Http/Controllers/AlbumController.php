@@ -57,7 +57,7 @@ class AlbumController extends Controller
 
     // page detail
         public function show(Request $request, Album $album){
-            $data_photos = Photo::where('album_id', $album->id);
+            $data_photos = Photo::where('status_active', '1')->where('album_id', $album->id);
 
             if ($request->has('search')) {
                 $data_photos->where('photo_title', 'LIKE', '%' . $request->search . '%');
@@ -101,6 +101,11 @@ class AlbumController extends Controller
 
                 $album->update($data_album_update);
                 return redirect('/album')->with('warning', 'successfully updated one album');
+        }
+
+        public function destroy(Album $album){
+            $album->delete();
+            return redirect('/album')->with('warning', 'one album was successfully deleted');
         }
 
 }

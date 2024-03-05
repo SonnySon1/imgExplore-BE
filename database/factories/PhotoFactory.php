@@ -36,6 +36,8 @@ class PhotoFactory extends Factory
         shuffle($file_location);
         $shuffle_result = $file_location[0];
 
+        $createdAt = $this->faker->dateTimeBetween('-15 days', '-5 days');
+
         return [
             'photo_title' => $this->faker->sentence(mt_rand(2,8)),
             'photo_description' => fake()->paragraph(),
@@ -45,7 +47,8 @@ class PhotoFactory extends Factory
             'user_id' => mt_rand(1,2),
             'allow_comments' => '1',
             'status_active' =>  mt_rand(1,2),
-            'uuid'  => Str::uuid()
+            'uuid'  => Str::uuid(),
+            'created_at' => $createdAt
         ];
     }
 }

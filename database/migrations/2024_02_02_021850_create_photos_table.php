@@ -18,12 +18,12 @@ return new class extends Migration
             $table->text('photo_title');
             $table->text('photo_description');
             $table->string('file_location');
-            $table->foreignId('album_id')->nullable()->references('id')->on('albums')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('album_id')->nullable()->constrained('albums')->onDelete('set null');
+            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
             $table->enum('status_active', [0 , 1, 2])->default(0);
             $table->enum('allow_comments', [0 , 1 ])->default(1);
-            $table->uuid('uuid')->unique;
+            $table->uuid('uuid')->unique();
             $table->timestamps();
         });
     }
