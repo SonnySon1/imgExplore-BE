@@ -48,7 +48,7 @@
                                             <label for="album">Album</label>
                                             <select name="album" class="input-form" name="" id="album">
                                                 @foreach ($albums as $album)
-                                                    <option value="{{ $album->id }}" @if ($album->id == $photo->album->id) selected @endif>{{ $album->album_name }}</option>
+                                                    <option value="{{ $album->id }}">{{ $album->album_name }}</option>
                                                 @endforeach
                                             </select>
                                             @error('album')

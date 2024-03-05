@@ -32,6 +32,7 @@
                                     </div>
                                 </form>
                                 <a href="/album/edit={{ $album->uuid }}" class="edit-button-album"><i class="bi bi-pencil-square"></i></a>
+                                <a onclick="return confirm('Are you sure you want to delete this album?')" href="/album/delete={{ $album->uuid }}" class="edit-button-album"><i class="bi bi-trash2-fill"></i></a>
                         </div>
                         <div class="container-album-photo-detail">
                             @foreach ($data_photos as $data_photo)

@@ -123,9 +123,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="comment-body">
-                                    
-                                </div>
+                                @if ($photo->allow_comments == 1)
+                                    <div id="comment-body">
+                                        
+                                    </div>
+                                @endif
+                                
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ class ExploreController extends Controller
 {
     //explore page
     public function index() {
-        $categories = Category::paginate(10);
+        $categories = Category::paginate(8);
         return view('pages.explore', compact('categories'));
     }
 
