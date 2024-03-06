@@ -2,21 +2,23 @@
 const button_follow_profile = document.getElementById('button-follow-profile')
 const follow_icon = document.getElementById('follow-icon')
 
-button_follow_profile.addEventListener('click', function(){
-    if (button_follow_profile.classList.contains('follow-menu-profile-follow')) {
-        follow_icon.classList.remove('bi-person-x-fill')
-        button_follow_profile.classList.remove('follow-menu-profile-follow')
-        follow_icon.classList.add('bi-person-plus-fill')
-        button_follow_profile.classList.add('follow-menu-profile')
-    }
-    else{
-        button_follow_profile.classList.remove('follow-menu-profile')
-        button_follow_profile.classList.add('follow-menu-profile-follow')
-
-        follow_icon.classList.remove('bi-person-plus-fill')
-        follow_icon.classList.add('bi-person-x-fill')
-    }
-});
+if (button_follow_profile !== null) {
+    button_follow_profile.addEventListener('click', function(){
+        if (button_follow_profile.classList.contains('follow-menu-profile-follow')) {
+            follow_icon.classList.remove('bi-person-x-fill')
+            button_follow_profile.classList.remove('follow-menu-profile-follow')
+            follow_icon.classList.add('bi-person-plus-fill')
+            button_follow_profile.classList.add('follow-menu-profile')
+        }
+        else{
+            button_follow_profile.classList.remove('follow-menu-profile')
+            button_follow_profile.classList.add('follow-menu-profile-follow')
+    
+            follow_icon.classList.remove('bi-person-plus-fill')
+            follow_icon.classList.add('bi-person-x-fill')
+        }
+    });
+}
 
 
 var form = $('#followForm')[0];
