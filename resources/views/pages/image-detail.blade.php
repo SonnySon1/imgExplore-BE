@@ -56,7 +56,7 @@
                                     <h5>{{ $data_user->followTo->count() }}</h5>
                                 </div>
                             <div>
-                                @if ($photo->user->uuid !== Auth::user()->uuid)
+                                @if ($photo->user->uuid !== Auth::user()->uuid && $photo->user->status_active !== '0')
                                     @if ($data_follow  && $data_follow->to == $photo->user->id)
                                         <form id="followFormDetail">
                                             @csrf
