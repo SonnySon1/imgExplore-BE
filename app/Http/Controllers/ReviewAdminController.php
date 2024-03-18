@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follow;
 use App\Models\Photo;
 use Illuminate\Support\Str;
 use App\Models\Notification;
@@ -18,7 +19,8 @@ class ReviewAdminController extends Controller
 
     // show review
     public function show(Photo $photo ){
-        return view('pages.review.review-detail', compact('photo'));
+        $data_follow = Follow::firstWhere('from', Auth::user()->id);
+        return view('pages.review.review-detail', compact('photo', 'data_follow'));
     }
 
     // store review

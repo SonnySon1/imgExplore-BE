@@ -219,12 +219,14 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     width: 30px;
     height: 30px;
     border-radius: 100px;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: red;
 }
 .image-profileauthor-container img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    filter: brightness(110%);
 }
 
 

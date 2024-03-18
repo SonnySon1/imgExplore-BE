@@ -203,12 +203,12 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     width: 60px;
     height: 60px;
     border-radius: 100px;
-    background-color: red;
 }
 .profile-image-detail{
     border-radius: 200px;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .text-profile{
     font-size: 15px;
@@ -295,7 +295,6 @@ background: linear-gradient(180deg, rgba(255,91,0,1) 0%, rgba(255,123,0,1) 0%, r
     height: 45px;
     position: relative;
     border-radius: 100px;
-    background-color: red;
 }
 .image-comment{
     width: 100%;
