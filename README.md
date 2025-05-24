@@ -1,4 +1,4 @@
-# 🖼️ imgExplore-BE
+## 💻 imgExplore-BE
 
 **imgExplore-BE** is the original Laravel-based web application for the imgExplore project. It allows users to browse, upload, and engage with digital content — either their own or others’ — through features like following, liking, disliking, and commenting.
 
