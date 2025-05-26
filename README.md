@@ -23,6 +23,5 @@
 - **CSS**
 - **MySQL / MariaDB**
 - **Blade Templates**
-- **Authentication**
 
 ---
